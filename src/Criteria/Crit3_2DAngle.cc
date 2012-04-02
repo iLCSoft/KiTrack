@@ -1,4 +1,4 @@
-#include "Crit3_2DAngle.h"
+#include "Criteria/Crit3_2DAngle.h"
 
 #include <cmath>
 #include <sstream>

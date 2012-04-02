@@ -1,12 +1,10 @@
 #ifndef Segment_h
 #define Segment_h
 
-
-
-
 #include <vector>
 #include <list>
-#include "IHit.h"
+
+#include "KiTrack/IHit.h"
 
 namespace KiTrack{
 

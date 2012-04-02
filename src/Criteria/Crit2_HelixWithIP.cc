@@ -1,9 +1,9 @@
-#include "Crit2_HelixWithIP.h"
+#include "Criteria/Crit2_HelixWithIP.h"
 
 #include <cmath>
 #include <sstream>
 
-#include "SimpleCircle.h"
+#include "Criteria/SimpleCircle.h"
 
 using namespace KiTrack;
 

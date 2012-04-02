@@ -1,7 +1,7 @@
 #ifndef Crit2_PT_h
 #define Crit2_PT_h
 
-#include "ICriterion.h"
+#include "Criteria/ICriterion.h"
 
 
 namespace KiTrack{

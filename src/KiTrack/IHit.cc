@@ -1,4 +1,5 @@
-#include "IHit.h"
+#include "KiTrack/IHit.h"
+
 #include <cmath>
 
 using namespace KiTrack;

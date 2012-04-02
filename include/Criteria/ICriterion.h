@@ -5,8 +5,8 @@
 #include <map>
 #include <string>
 
-#include "Segment.h"
-#include "KiTrackExceptions.h"
+#include "KiTrack/Segment.h"
+#include "KiTrack/KiTrackExceptions.h"
 
 
 

@@ -1,9 +1,9 @@
-#include "Crit4_DistOfCircleCenters.h"
+#include "Criteria/Crit4_DistOfCircleCenters.h"
 
 #include <cmath>
 #include <sstream>
 
-#include "SimpleCircle.h"
+#include "Criteria/SimpleCircle.h"
 
 // ----- include for verbosity dependend logging ---------
 #include "marlin/VerbosityLevels.h"

@@ -2,7 +2,7 @@
 #define Crit4_RChange_h
 
 
-#include "ICriterion.h"
+#include "Criteria/ICriterion.h"
 
 namespace KiTrack{
    

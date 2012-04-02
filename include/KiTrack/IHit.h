@@ -1,7 +1,7 @@
 #ifndef IHit_h
 #define IHit_h
 
-#include "ISectorSystem.h"
+#include "KiTrack/ISectorSystem.h"
 
 namespace KiTrack{
    

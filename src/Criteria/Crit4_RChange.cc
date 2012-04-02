@@ -1,9 +1,9 @@
-#include "Crit4_RChange.h"
+#include "Criteria/Crit4_RChange.h"
 
 #include <cmath>
 #include <sstream>
 
-#include "SimpleCircle.h"
+#include "Criteria/SimpleCircle.h"
 
 
 

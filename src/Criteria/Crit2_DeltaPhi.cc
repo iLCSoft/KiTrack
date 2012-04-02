@@ -1,4 +1,4 @@
-#include "Crit2_DeltaPhi.h"
+#include "Criteria/Crit2_DeltaPhi.h"
 
 #include <cmath>
 #include <sstream>

@@ -1,4 +1,4 @@
-#include "Crit4_NoZigZag.h"
+#include "Criteria/Crit4_NoZigZag.h"
 
 #include <cmath>
 #include <sstream>

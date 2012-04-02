@@ -1,9 +1,9 @@
-#include "Crit4_PhiZRatioChange.h"
+#include "Criteria/Crit4_PhiZRatioChange.h"
 
 #include <cmath>
 #include <sstream>
 
-#include "SimpleCircle.h"
+#include "Criteria/SimpleCircle.h"
 #include "TVector3.h"
 
 

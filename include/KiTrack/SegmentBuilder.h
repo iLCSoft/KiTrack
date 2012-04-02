@@ -1,9 +1,9 @@
 #ifndef SegmentBuilder_h
 #define SegmentBuilder_h
 
-#include "ICriterion.h"
-#include "ISectorConnector.h"
-#include "Automaton.h"
+#include "Criteria/ICriterion.h"
+#include "KiTrack/ISectorConnector.h"
+#include "KiTrack/Automaton.h"
 
 namespace KiTrack{
 

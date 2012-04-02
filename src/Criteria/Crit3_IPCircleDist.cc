@@ -1,10 +1,10 @@
-#include "Crit3_IPCircleDist.h"
+#include "Criteria/Crit3_IPCircleDist.h"
 
 
 #include <cmath>
 #include <sstream>
 
-#include "SimpleCircle.h"
+#include "Criteria/SimpleCircle.h"
 
 using namespace KiTrack;
 

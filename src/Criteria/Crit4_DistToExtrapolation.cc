@@ -1,9 +1,9 @@
-#include "Crit4_DistToExtrapolation.h"
+#include "Criteria/Crit4_DistToExtrapolation.h"
 
 #include <cmath>
 #include <sstream>
 
-#include "SimpleCircle.h"
+#include "Criteria/SimpleCircle.h"
 #include "TVector3.h"
 
 

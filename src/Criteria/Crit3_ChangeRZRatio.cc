@@ -1,4 +1,4 @@
-#include "Crit3_ChangeRZRatio.h"
+#include "Criteria/Crit3_ChangeRZRatio.h"
 
 #include <cmath>
 #include <sstream>

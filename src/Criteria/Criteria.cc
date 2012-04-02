@@ -1,4 +1,4 @@
-#include "Criteria.h"
+#include "Criteria/Criteria.h"
 
 using namespace KiTrack;
 

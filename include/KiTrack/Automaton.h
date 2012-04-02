@@ -2,8 +2,8 @@
 #define Automaton_h
 
 #include <vector>
-#include "Segment.h"
-#include "ICriterion.h"
+#include "KiTrack/Segment.h"
+#include "Criteria/ICriterion.h"
 
 
 

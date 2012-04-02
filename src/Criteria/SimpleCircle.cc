@@ -1,4 +1,4 @@
-#include "SimpleCircle.h"
+#include "Criteria/SimpleCircle.h"
 
 #include <cmath>
 #include <sstream>

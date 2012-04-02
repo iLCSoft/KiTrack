@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "KiTrackExceptions.h"
+#include "KiTrack/KiTrackExceptions.h"
 
 namespace KiTrack{
    

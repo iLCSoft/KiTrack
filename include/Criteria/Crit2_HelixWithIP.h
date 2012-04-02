@@ -2,7 +2,7 @@
 #define Crit2_HelixWithIP_h
 
 
-#include "ICriterion.h"
+#include "Criteria/ICriterion.h"
 
 namespace KiTrack{
 

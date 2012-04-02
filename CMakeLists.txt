@@ -55,8 +55,7 @@ ADD_DEFINITIONS( "-Wno-long-long" )
 
 # include directories
 INCLUDE_DIRECTORIES( 
-   ./include/Criteria
-   ./include/KiTrack 
+   ./include
    )
 #INSTALL_DIRECTORY( ./include DESTINATION . FILES_MATCHING PATTERN "*.h" )
 

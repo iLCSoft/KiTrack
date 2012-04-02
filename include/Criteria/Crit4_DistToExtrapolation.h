@@ -2,7 +2,7 @@
 #define Crit4_DistToExtrapolation_h
 
 
-#include "ICriterion.h"
+#include "Criteria/ICriterion.h"
 
 namespace KiTrack{
    

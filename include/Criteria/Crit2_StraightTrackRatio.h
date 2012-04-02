@@ -2,7 +2,7 @@
 #define Crit2_StraightTrackRatio_h
 
 
-#include "ICriterion.h"
+#include "Criteria/ICriterion.h"
 
 namespace KiTrack{
 

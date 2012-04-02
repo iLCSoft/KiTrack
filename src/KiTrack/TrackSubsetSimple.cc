@@ -1,13 +1,11 @@
-#include "TrackSubsetSimple.h"
+#include "KiTrack/TrackSubsetSimple.h"
 
 #include <algorithm>
+
 #include "marlin/VerbosityLevels.h"
 
 
-
 using namespace KiTrack;
-
-
 
 
 bool compare_QI( ITrack* a, ITrack* b ){

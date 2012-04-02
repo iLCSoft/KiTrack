@@ -1,4 +1,4 @@
-#include "Crit2_StraightTrackRatio.h"
+#include "Criteria/Crit2_StraightTrackRatio.h"
 
 #include <cmath>
 #include <sstream>

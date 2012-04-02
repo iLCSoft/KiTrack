@@ -1,7 +1,7 @@
 #ifndef Crit2_ChangeRZRatio_h
 #define Crit2_ChangeRZRatio_h
 
-#include "ICriterion.h"
+#include "Criteria/ICriterion.h"
 
 
 namespace KiTrack{

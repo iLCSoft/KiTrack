@@ -1,7 +1,7 @@
 #ifndef SimpleCircle_h
 #define SimpleCircle_h
 
-#include "KiTrackExceptions.h"
+#include "KiTrack/KiTrackExceptions.h"
 
 namespace KiTrack{
 

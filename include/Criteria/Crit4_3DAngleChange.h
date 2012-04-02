@@ -2,7 +2,7 @@
 #define Crit4_3DAngleChange_h
 
 
-#include "ICriterion.h"
+#include "Criteria/ICriterion.h"
 
 namespace KiTrack{
    

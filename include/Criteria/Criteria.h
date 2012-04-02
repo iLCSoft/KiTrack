@@ -4,25 +4,25 @@
 
 
 
-#include "Crit2_RZRatio.h"
-#include "Crit2_StraightTrackRatio.h"
-#include "Crit2_DeltaPhi.h"
-#include "Crit2_HelixWithIP.h"
-#include "Crit2_DeltaRho.h"
+#include "Criteria/Crit2_RZRatio.h"
+#include "Criteria/Crit2_StraightTrackRatio.h"
+#include "Criteria/Crit2_DeltaPhi.h"
+#include "Criteria/Crit2_HelixWithIP.h"
+#include "Criteria/Crit2_DeltaRho.h"
 
-#include "Crit3_ChangeRZRatio.h"  
-#include "Crit3_PT.h"
-#include "Crit3_2DAngle.h"
-#include "Crit3_3DAngle.h"
-#include "Crit3_IPCircleDist.h"  
+#include "Criteria/Crit3_ChangeRZRatio.h"  
+#include "Criteria/Crit3_PT.h"
+#include "Criteria/Crit3_2DAngle.h"
+#include "Criteria/Crit3_3DAngle.h"
+#include "Criteria/Crit3_IPCircleDist.h"  
 
-#include "Crit4_2DAngleChange.h"    
-#include "Crit4_3DAngleChange.h" 
-#include "Crit4_DistToExtrapolation.h"  
-#include "Crit4_PhiZRatioChange.h"
-#include "Crit4_DistOfCircleCenters.h"
-#include "Crit4_NoZigZag.h"
-#include "Crit4_RChange.h"
+#include "Criteria/Crit4_2DAngleChange.h"    
+#include "Criteria/Crit4_3DAngleChange.h" 
+#include "Criteria/Crit4_DistToExtrapolation.h"  
+#include "Criteria/Crit4_PhiZRatioChange.h"
+#include "Criteria/Crit4_DistOfCircleCenters.h"
+#include "Criteria/Crit4_NoZigZag.h"
+#include "Criteria/Crit4_RChange.h"
 
 
 

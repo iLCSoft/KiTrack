@@ -1,4 +1,5 @@
-#include "HopfieldNeuralNet.h"
+#include "KiTrack/HopfieldNeuralNet.h"
+
 #include <cmath>
 #include <iostream>
 #include <algorithm>

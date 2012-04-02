@@ -1,7 +1,7 @@
 #ifndef TrackSubsetHopfieldNN_h
 #define TrackSubsetHopfieldNN_h
 
-#include "ITrackSubset.h"
+#include "KiTrack/ITrackSubset.h"
 
 
 

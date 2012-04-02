@@ -1,4 +1,4 @@
-#include "Segment.h"
+#include "KiTrack/Segment.h"
 
 using namespace KiTrack;
 

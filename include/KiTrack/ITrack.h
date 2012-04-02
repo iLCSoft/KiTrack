@@ -2,7 +2,7 @@
 #define ITrack_h
 
 #include <vector>
-#include "IHit.h"
+#include "KiTrack/IHit.h"
 
 namespace KiTrack{
 

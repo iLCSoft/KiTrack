@@ -1,4 +1,4 @@
-#include "Automaton.h"
+#include "KiTrack/Automaton.h"
 
 #include "marlin/VerbosityLevels.h"
 

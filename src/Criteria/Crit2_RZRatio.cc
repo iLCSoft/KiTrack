@@ -1,4 +1,4 @@
-#include "Crit2_RZRatio.h"
+#include "Criteria/Crit2_RZRatio.h"
 
 #include <cmath>
 #include <sstream>

@@ -1,9 +1,9 @@
-#include "Crit3_PT.h"
+#include "Criteria/Crit3_PT.h"
 
 #include <cmath>
 #include <sstream>
 
-#include "SimpleCircle.h"
+#include "Criteria/SimpleCircle.h"
 
 using namespace KiTrack;
 

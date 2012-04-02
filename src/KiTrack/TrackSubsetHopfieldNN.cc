@@ -1,10 +1,10 @@
-#include "TrackSubsetHopfieldNN.h"
+#include "KiTrack/TrackSubsetHopfieldNN.h"
 
 #include <CLHEP/Random/RandFlat.h>
 #include "marlin/VerbosityLevels.h"
 
 
-#include "HopfieldNeuralNet.h"
+#include "KiTrack/HopfieldNeuralNet.h"
 
 using namespace KiTrack;
 

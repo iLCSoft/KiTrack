@@ -2,7 +2,7 @@
 #define Crit4_PhiZRatioChange_h
 
 
-#include "ICriterion.h"
+#include "Criteria/ICriterion.h"
 
 namespace KiTrack{
    

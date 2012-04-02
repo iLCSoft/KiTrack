@@ -2,7 +2,7 @@
 #define Crit2_DeltaPhi_h
 
 
-#include "ICriterion.h"
+#include "Criteria/ICriterion.h"
 
 namespace KiTrack{
 

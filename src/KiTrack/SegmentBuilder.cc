@@ -1,4 +1,4 @@
-#include "SegmentBuilder.h"
+#include "KiTrack/SegmentBuilder.h"
 
 // ----- include for verbosity dependend logging ---------
 #include "marlin/VerbosityLevels.h"
