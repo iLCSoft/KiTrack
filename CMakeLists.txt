@@ -105,3 +105,5 @@ INCLUDE_DIRECTORIES( ${ILCTEST_INCLUDE_DIRS} )
 # display some variables and write them to cache
 DISPLAY_STD_VARIABLES()
 
+# generate and install following configuration files
+GENERATE_PACKAGE_CONFIGURATION_FILES( KiTrackConfig.cmake KiTrackConfigVersion.cmake KiTrackLibDeps.cmake )
