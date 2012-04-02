@@ -5,7 +5,7 @@
 #include <vector>
 
 
-namespace FTrack{
+namespace KiTrack{
 
    /**
     * Represents a hopfield neuronal network

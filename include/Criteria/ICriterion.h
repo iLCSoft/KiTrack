@@ -6,11 +6,11 @@
 #include <string>
 
 #include "Segment.h"
-#include "FTrackExceptions.h"
+#include "KiTrackExceptions.h"
 
 
 
-namespace FTrack{
+namespace KiTrack{
 
 
    /**An Interface to model the criterion for a number of TrackerHits to be compatible for

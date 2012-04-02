@@ -1,31 +1,31 @@
-#ifndef FTrackExceptions_h
-#define FTrackExceptions_h
+#ifndef KiTrackExceptions_h
+#define KiTrackExceptions_h
 
 #include <string>
 #include <exception> 
 
-//Exceptions for the FTrackNamespace
+//Exceptions for the KiTrackNamespace
 
-namespace FTrack {
+namespace KiTrack {
 
-  /**Base exception class for FTrack - all other exceptions extend this.
+  /**Base exception class for KiTrack - all other exceptions extend this.
    * @author R. Glattauer, HEPHY
    * 
    */
 
-  class FTrackException : public std::exception {
+  class KiTrackException : public std::exception {
 
     
   protected:
     std::string message ;
     
-    FTrackException(){  /*no_op*/ ; } 
+    KiTrackException(){  /*no_op*/ ; } 
     
   public: 
-     virtual ~FTrackException() throw() { /*no_op*/; } 
+     virtual ~KiTrackException() throw() { /*no_op*/; } 
     
-    FTrackException( const std::string& text ){
-      message = "FTrack::Exception: " + text ;
+    KiTrackException( const std::string& text ){
+      message = "KiTrack::Exception: " + text ;
     }
 
     virtual const char* what() const  throw() { return  message.c_str() ; } 
@@ -37,7 +37,7 @@ namespace FTrack {
   /**Out of range exception, used when the user tries to access layers oder sensors, that are not implemented
    * @author R. Glattauer, HEPHY
    */
-  class OutOfRange : public FTrackException{
+  class OutOfRange : public KiTrackException{
     
   protected:
     OutOfRange() {  /*no_op*/ ; } 
@@ -45,7 +45,7 @@ namespace FTrack {
     virtual ~OutOfRange() throw() { /*no_op*/; } 
 
     OutOfRange( std::string text ){
-      message = "FTrack::OutOfRange: " + text ;
+      message = "KiTrack::OutOfRange: " + text ;
     }
   }; 
   
@@ -53,7 +53,7 @@ namespace FTrack {
   /**Invalid Parameter exception.
    * @author R. Glattauer, HEPHY
    */
-  class InvalidParameter : public FTrackException{
+  class InvalidParameter : public KiTrackException{
      
   protected:
      InvalidParameter() {  /*no_op*/ ; } 
@@ -61,7 +61,7 @@ namespace FTrack {
      virtual ~InvalidParameter() throw() { /*no_op*/; } 
      
      InvalidParameter( std::string text ){
-        message = "FTrack::InvalidParameter: " + text ;
+        message = "KiTrack::InvalidParameter: " + text ;
      }
   }; 
   
@@ -69,7 +69,7 @@ namespace FTrack {
   /**Wrong segment length exception.
    * @author R. Glattauer, HEPHY
    */
-  class BadSegmentLength : public FTrackException{
+  class BadSegmentLength : public KiTrackException{
      
   protected:
      BadSegmentLength() {  /*no_op*/ ; } 
@@ -77,7 +77,7 @@ namespace FTrack {
      virtual ~BadSegmentLength() throw() { /*no_op*/; } 
      
      BadSegmentLength( std::string text ){
-        message = "FTrack::BadSegmentLength: " + text ;
+        message = "KiTrack::BadSegmentLength: " + text ;
      }
   }; 
 
@@ -86,7 +86,7 @@ namespace FTrack {
   /**Unknown criterion exception.
    * @author R. Glattauer, HEPHY
    */
-  class UnknownCriterion : public FTrackException{
+  class UnknownCriterion : public KiTrackException{
      
   protected:
      UnknownCriterion() {  /*no_op*/ ; } 
@@ -94,7 +94,7 @@ namespace FTrack {
      virtual ~UnknownCriterion() throw() { /*no_op*/; } 
      
      UnknownCriterion( std::string text ){
-        message = "FTrack::UnknownCriterion: " + text ;
+        message = "KiTrack::UnknownCriterion: " + text ;
      }
   }; 
 

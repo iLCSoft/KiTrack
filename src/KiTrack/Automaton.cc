@@ -2,14 +2,9 @@
 
 #include "marlin/VerbosityLevels.h"
 
-#include "IMPL/TrackImpl.h"
 
-#include <MarlinCED.h>
-#include "UTIL/ILDConf.h"
 
-using namespace lcio;
-
-using namespace FTrack;
+using namespace KiTrack;
 
 
 void Automaton::addSegment ( Segment* segment ){
@@ -661,61 +656,61 @@ std::vector <Segment*> Automaton::getSegments(){
    
 }
 
-//TODO: this should not be in here as this is framework specific
-void Automaton::drawSegments(){
-   
-   
-   
-   for( unsigned int layer=0 ; layer < _segments.size(); layer++ ){ //over all layers
-      
-      
-      std::list<Segment*> segments = _segments[layer];
-      
-      for( std::list<Segment*>::iterator iSeg = segments.begin(); iSeg != segments.end(); iSeg++ ){ //over all segments in the layer
-         
-         Segment* segment = *iSeg;
-         std::vector <IHit*> hits = segment->getHits();         
-         
-         if ( hits.size() == 1){ //exactly one hit, so draw a point
-            
-            
-            IHit* a = hits[0];
-            ced_hit( a->getX() ,a->getY() , a->getZ() , 0 , 3 ,0xff0000 );
-            
-            
-         }
-         else{ //more than one point or no points
-            for( unsigned i=1 ; i< hits.size() ; i++ ){ // over all hits in the segment (as we connect it with the previous we start with hit 1)
-               
-               IHit* a = hits[i];
-               IHit* b = hits[i-1];
-               
-               
-               unsigned int color=0;
-               unsigned int red=0;
-               unsigned int blue=0;
-               unsigned int green=0;
-               
-               float p =  sqrt ((float)  segment->getInnerState() / (float) ( _segments.size()) );
-               
-               green = unsigned( ceil ( (1.-p) * 255 ) );
-               red = unsigned( floor( 255*p ) );
-               blue = unsigned( ceil ( (1.-p) * 255 ) );
-               
-               color = red * 256*256 + green * 256 + blue;
-               
-               ced_line_ID( a->getX() ,a->getY() , a->getZ() , b->getX() ,b->getY() , b->getZ() , 2 , segment->getInnerState()+1 , color, 0);
-               
-            }
-            
-         }
-         
-      }
-      
-   }
-   
-   
-}
+//TODO: framework specific, so commented out. What to do with it???
+// void Automaton::drawSegments(){
+//    
+//    
+//    
+//    for( unsigned int layer=0 ; layer < _segments.size(); layer++ ){ //over all layers
+//       
+//       
+//       std::list<Segment*> segments = _segments[layer];
+//       
+//       for( std::list<Segment*>::iterator iSeg = segments.begin(); iSeg != segments.end(); iSeg++ ){ //over all segments in the layer
+//          
+//          Segment* segment = *iSeg;
+//          std::vector <IHit*> hits = segment->getHits();         
+//          
+//          if ( hits.size() == 1){ //exactly one hit, so draw a point
+//             
+//             
+//             IHit* a = hits[0];
+//             ced_hit( a->getX() ,a->getY() , a->getZ() , 0 , 3 ,0xff0000 );
+//             
+//             
+//          }
+//          else{ //more than one point or no points
+//             for( unsigned i=1 ; i< hits.size() ; i++ ){ // over all hits in the segment (as we connect it with the previous we start with hit 1)
+//                
+//                IHit* a = hits[i];
+//                IHit* b = hits[i-1];
+//                
+//                
+//                unsigned int color=0;
+//                unsigned int red=0;
+//                unsigned int blue=0;
+//                unsigned int green=0;
+//                
+//                float p =  sqrt ((float)  segment->getInnerState() / (float) ( _segments.size()) );
+//                
+//                green = unsigned( ceil ( (1.-p) * 255 ) );
+//                red = unsigned( floor( 255*p ) );
+//                blue = unsigned( ceil ( (1.-p) * 255 ) );
+//                
+//                color = red * 256*256 + green * 256 + blue;
+//                
+//                ced_line_ID( a->getX() ,a->getY() , a->getZ() , b->getX() ,b->getY() , b->getZ() , 2 , segment->getInnerState()+1 , color, 0);
+//                
+//             }
+//             
+//          }
+//          
+//       }
+//       
+//    }
+//    
+//    
+// }
 
 
 Automaton::~Automaton(){

@@ -5,7 +5,7 @@
 
 #include "SimpleCircle.h"
 
-using namespace FTrack;
+using namespace KiTrack;
 
 
 Crit3_PT::Crit3_PT( float ptMin , float ptMax , float Bz ){

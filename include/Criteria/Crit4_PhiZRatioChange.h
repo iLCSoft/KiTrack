@@ -4,7 +4,7 @@
 
 #include "ICriterion.h"
 
-namespace FTrack{
+namespace KiTrack{
    
    /** Criterion: check for the change of Phi / Z. (Phi = angle in the circle between two hits)
     */

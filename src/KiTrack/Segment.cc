@@ -1,6 +1,6 @@
 #include "Segment.h"
 
-using namespace FTrack;
+using namespace KiTrack;
 
 Segment::Segment( std::vector <IHit*> hits){ 
 

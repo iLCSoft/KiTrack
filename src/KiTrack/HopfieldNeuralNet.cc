@@ -3,7 +3,7 @@
 #include <iostream>
 #include <algorithm>
 
-using namespace FTrack;
+using namespace KiTrack;
 
 HopfieldNeuralNet::HopfieldNeuralNet( std::vector < std::vector <bool> > G , std::vector < double > QI , std::vector < double > states , double omega){
 

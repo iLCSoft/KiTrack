@@ -1,7 +1,7 @@
 #include "IHit.h"
 #include <cmath>
 
-using namespace FTrack;
+using namespace KiTrack;
 
 float IHit::distTo( IHit* otherHit ){
    

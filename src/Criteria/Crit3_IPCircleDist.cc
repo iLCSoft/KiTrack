@@ -6,7 +6,7 @@
 
 #include "SimpleCircle.h"
 
-using namespace FTrack;
+using namespace KiTrack;
 
 
 Crit3_IPCircleDist::Crit3_IPCircleDist( float distToCircleMin , float distToCircleMax ){

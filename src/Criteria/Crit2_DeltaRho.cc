@@ -3,7 +3,7 @@
 #include <cmath>
 #include <sstream>
 
-using namespace FTrack;
+using namespace KiTrack;
 
 Crit2_DeltaRho::Crit2_DeltaRho ( float deltaRhoMin , float deltaRhoMax ){
    

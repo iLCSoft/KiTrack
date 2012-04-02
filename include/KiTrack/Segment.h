@@ -8,7 +8,7 @@
 #include <list>
 #include "IHit.h"
 
-namespace FTrack{
+namespace KiTrack{
 
    
    /** A segment is a part of a track. This track can be real or not (for example ghosttracks). 
@@ -96,7 +96,7 @@ namespace FTrack{
    };
 
 
-} //end of FTrack Namespace
+} //end of KiTrack Namespace
 
 #endif
 

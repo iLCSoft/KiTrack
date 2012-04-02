@@ -3,7 +3,7 @@
 // ----- include for verbosity dependend logging ---------
 #include "marlin/VerbosityLevels.h"
 
-using namespace FTrack;
+using namespace KiTrack;
 
 SegmentBuilder::SegmentBuilder(  std::map< int , std::vector< IHit* > > map_sector_hits ): 
    

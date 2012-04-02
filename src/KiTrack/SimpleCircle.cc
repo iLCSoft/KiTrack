@@ -5,7 +5,7 @@
 
 
 
-using namespace FTrack;
+using namespace KiTrack;
 
 SimpleCircle::SimpleCircle( double x1 , double y1 , double x2 , double y2 , double x3, double y3 ) throw( InvalidParameter ){
   

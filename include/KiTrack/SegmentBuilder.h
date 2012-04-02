@@ -5,7 +5,7 @@
 #include "ISectorConnector.h"
 #include "Automaton.h"
 
-namespace FTrack{
+namespace KiTrack{
 
 
    /** This classe builds the Cellular Automaton from the hits

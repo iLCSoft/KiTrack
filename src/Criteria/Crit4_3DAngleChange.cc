@@ -6,7 +6,7 @@
 #include "TVector3.h"
 
 
-using namespace FTrack;
+using namespace KiTrack;
 
 Crit4_3DAngleChange::Crit4_3DAngleChange ( float changeMin , float changeMax ){
    

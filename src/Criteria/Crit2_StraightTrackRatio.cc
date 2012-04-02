@@ -3,7 +3,7 @@
 #include <cmath>
 #include <sstream>
 
-using namespace FTrack;
+using namespace KiTrack;
 
 Crit2_StraightTrackRatio::Crit2_StraightTrackRatio ( float ratioMin, float ratioMax ){
    

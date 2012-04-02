@@ -3,7 +3,7 @@
 #include <cmath>
 #include <sstream>
 
-using namespace FTrack;
+using namespace KiTrack;
 
 Crit2_DeltaPhi::Crit2_DeltaPhi ( float deltaPhiMin , float deltaPhiMax ){
    

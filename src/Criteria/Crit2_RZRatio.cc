@@ -4,7 +4,7 @@
 #include <sstream>
 
 
-using namespace FTrack;
+using namespace KiTrack;
 
 Crit2_RZRatio::Crit2_RZRatio ( float ratioMin, float ratioMax ){
    

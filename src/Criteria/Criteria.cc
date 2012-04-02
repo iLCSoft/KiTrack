@@ -1,6 +1,6 @@
 #include "Criteria.h"
 
-using namespace FTrack;
+using namespace KiTrack;
 
 std::set< std::string > Criteria::getAllCriteriaNames(){
 

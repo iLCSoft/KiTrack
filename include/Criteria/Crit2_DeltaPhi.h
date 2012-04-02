@@ -4,7 +4,7 @@
 
 #include "ICriterion.h"
 
-namespace FTrack{
+namespace KiTrack{
 
    /** Criterion: the difference between the phi angles of two hits in grad. 
     */

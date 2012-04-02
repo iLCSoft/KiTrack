@@ -5,7 +5,7 @@
 
 
 
-namespace FTrack {
+namespace KiTrack {
  
    /** A class to get the best subset of tracks, by taking the track with the highest Quality
     * Indicator and throwing away all incompatible tracks. Of the remaining tracks repeat the procedure. 

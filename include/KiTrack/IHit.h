@@ -3,7 +3,7 @@
 
 #include "ISectorSystem.h"
 
-namespace FTrack{
+namespace KiTrack{
    
    
    /** An Interface for hits.

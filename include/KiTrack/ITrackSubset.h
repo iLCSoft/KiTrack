@@ -5,7 +5,7 @@
 #include "ITrack.h"
 
 
-namespace FTrack {
+namespace KiTrack {
  
    /** An interface for getting a subset of tracks.
     * It receives the tracks over the methods addTrack() and addTracks().

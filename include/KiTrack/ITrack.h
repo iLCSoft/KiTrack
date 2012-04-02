@@ -4,7 +4,7 @@
 #include <vector>
 #include "IHit.h"
 
-namespace FTrack{
+namespace KiTrack{
 
    
    /** Abstract Base Class for tracks.

@@ -4,7 +4,7 @@
 
 #include "ICriterion.h"
 
-namespace FTrack{
+namespace KiTrack{
    
    /** Criterion: forbids zig zagging
     */

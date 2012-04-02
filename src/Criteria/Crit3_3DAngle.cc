@@ -3,7 +3,7 @@
 #include <cmath>
 #include <sstream>
 
-using namespace FTrack;
+using namespace KiTrack;
 
 Crit3_3DAngle::Crit3_3DAngle ( float angleMin, float angleMax ){
    

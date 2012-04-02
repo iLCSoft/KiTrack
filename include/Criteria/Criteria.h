@@ -32,7 +32,7 @@
 #include <string>
 
 
-namespace FTrack{
+namespace KiTrack{
 
    /**
     * Information about all Criteria.

@@ -4,7 +4,7 @@
 
 #include "ICriterion.h"
 
-namespace FTrack{
+namespace KiTrack{
 
    /** Cirterion: distance of two hits divided by their z-distance.
     * \f[ \frac{\Delta z}{\sqrt{ \Delta x^2 + \Delta y^2 + \Delta z^2 } }\f]

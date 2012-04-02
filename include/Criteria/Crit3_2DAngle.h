@@ -4,7 +4,7 @@
 
 #include "ICriterion.h"
 
-namespace FTrack{
+namespace KiTrack{
 
    /** Criterion: the angle between two 2-segments
     */

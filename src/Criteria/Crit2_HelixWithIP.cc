@@ -5,7 +5,7 @@
 
 #include "SimpleCircle.h"
 
-using namespace FTrack;
+using namespace KiTrack;
 
 Crit2_HelixWithIP::Crit2_HelixWithIP ( float ratioMin , float ratioMax ){
    

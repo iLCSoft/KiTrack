@@ -3,7 +3,7 @@
 #include <cmath>
 #include <sstream>
 
-using namespace FTrack;
+using namespace KiTrack;
 
 
 Crit3_ChangeRZRatio::Crit3_ChangeRZRatio( float minChange , float maxChange ){

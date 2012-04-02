@@ -5,7 +5,7 @@
 
 
 
-namespace FTrack {
+namespace KiTrack {
  
    /** A class to get the best subset of tracks with a Hopfield Neural Network
     * 

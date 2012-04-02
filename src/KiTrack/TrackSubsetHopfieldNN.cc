@@ -6,7 +6,7 @@
 
 #include "HopfieldNeuralNet.h"
 
-using namespace FTrack;
+using namespace KiTrack;
 
 
 void TrackSubsetHopfieldNN::calculateBestSet(){

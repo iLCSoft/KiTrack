@@ -6,7 +6,7 @@
 #include "TVector3.h"
 
 
-using namespace FTrack;
+using namespace KiTrack;
 
 Crit4_NoZigZag::Crit4_NoZigZag ( float prodMin , float prodMax ){
    

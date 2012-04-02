@@ -4,7 +4,7 @@
 
 #include "ICriterion.h"
 
-namespace FTrack{
+namespace KiTrack{
 
    /** Criterion: for straight tracks, if line between two hits points towards IP.
     * Calculated is

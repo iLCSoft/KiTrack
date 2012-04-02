@@ -1,9 +1,9 @@
 #ifndef SimpleCircle_h
 #define SimpleCircle_h
 
-#include "FTrackExceptions.h"
+#include "KiTrackExceptions.h"
 
-namespace FTrack{
+namespace KiTrack{
 
 class SimpleCircle {
   
@@ -40,7 +40,7 @@ class SimpleCircle {
 
 
 
-} // end of namespace FTrack
+} // end of namespace KiTrack
 
 
 

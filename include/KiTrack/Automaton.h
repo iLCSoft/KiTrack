@@ -7,7 +7,7 @@
 
 
 
-namespace FTrack{
+namespace KiTrack{
    
    
    /** The class for the cellular automaton.

@@ -4,7 +4,7 @@
 
 #include "ICriterion.h"
 
-namespace FTrack{
+namespace KiTrack{
 
    /** Criterion: Check if two hits are compatible with a helix crossing the IP.
     * The procedure is this: a circle is calculated from the two hits and the IP.

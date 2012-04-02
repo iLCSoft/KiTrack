@@ -4,7 +4,7 @@
 
 #include "ICriterion.h"
 
-namespace FTrack{
+namespace KiTrack{
 
    /** Criterion: the difference of the sqrt(x^2 + y^2) of two hits.
     */

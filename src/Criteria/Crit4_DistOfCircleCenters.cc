@@ -8,7 +8,7 @@
 // ----- include for verbosity dependend logging ---------
 #include "marlin/VerbosityLevels.h"
 
-using namespace FTrack;
+using namespace KiTrack;
 
 Crit4_DistOfCircleCenters::Crit4_DistOfCircleCenters ( float distMin , float distMax ){
    
