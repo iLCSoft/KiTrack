@@ -5,8 +5,6 @@
 
 #include "Criteria/SimpleCircle.h"
 
-// ----- include for verbosity dependend logging ---------
-#include "marlin/VerbosityLevels.h"
 
 using namespace KiTrack;
 
@@ -57,20 +55,6 @@ bool Crit4_DistOfCircleCenters::areCompatible( Segment* parent , Segment* child 
       float dy = d->getY();
 //       float dz = d->getZ();
       
-/*      
-      streamlog_out( DEBUG4 ) << "\nax " << ax;
-      streamlog_out( DEBUG4 ) << "\nay " << ay;
-      streamlog_out( DEBUG4 ) << "\naz " << az;
-      streamlog_out( DEBUG4 ) << "\nbx " << bx;
-      streamlog_out( DEBUG4 ) << "\nby " << by;
-      streamlog_out( DEBUG4 ) << "\nbz " << bz;
-      streamlog_out( DEBUG4 ) << "\ncx " << cx;
-      streamlog_out( DEBUG4 ) << "\ncy " << cy;
-      streamlog_out( DEBUG4 ) << "\ncz " << cz;
-      streamlog_out( DEBUG4 ) << "\ndx " << dx;
-      streamlog_out( DEBUG4 ) << "\ndy " << dy;
-      streamlog_out( DEBUG4 ) << "\ndz " << dz;*/
-
       
       
       try{
@@ -90,12 +74,6 @@ bool Crit4_DistOfCircleCenters::areCompatible( Segment* parent , Segment* child 
          
          if (_saveValues) _map_name_value["Crit4_DistOfCircleCenters"] = distOfCircleCenters;
          
-//          streamlog_out( DEBUG4 ) << "\n" << distOfCircleCenters;
-//          streamlog_out( DEBUG4 ) << "\nx1 " << X1;
-//          streamlog_out( DEBUG4 ) << "\ny1 " << Y1;
-//          streamlog_out( DEBUG4 ) << "\nx2 " << X2;
-//          streamlog_out( DEBUG4 ) << "\ny2 " << Y2;
-
          
          if ( distOfCircleCenters > _distMax ) return false;
          if ( distOfCircleCenters < _distMin ) return false;

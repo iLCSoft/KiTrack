@@ -10,9 +10,12 @@
 ############################################################################################################
 
 
+   Consists of two folders:
 
+   KiTrack: most of the package is in here: a Cellular Automaton, a Hopfield Neural Network, the hit
+   and track classes (abstract base classes)
 
-
+   Criteria: in here are all the criteria classes are stored.
 
 
 
@@ -26,4 +29,10 @@ Version History
  | changes since last version  |
   -----------------------------
  
-      Currently under first construction
+ 
+
+  ---------
+ | v01-00  |
+  ---------
+
+      - first version: splitted the software from the ForwardTracking package at version v01-02
