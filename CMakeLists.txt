@@ -57,7 +57,7 @@ ADD_DEFINITIONS( "-Wno-long-long" )
 INCLUDE_DIRECTORIES( 
    ./include
    )
-#INSTALL_DIRECTORY( ./include DESTINATION . FILES_MATCHING PATTERN "*.h" )
+INSTALL_DIRECTORY( ./include DESTINATION . FILES_MATCHING PATTERN "*.h" )
 
 # add library
 AUX_SOURCE_DIRECTORY( ./src/Criteria library_sources )
