@@ -36,3 +36,6 @@ Version History
   ---------
 
       - first version: splitted the software from the ForwardTracking package at version v01-02
+      - Moved SimpleCircle from KiTrack to Criteria (as it is used by them)
+      - Commented out drawSegments() in Automaton, because it is dependent on the framework. 
+         (functionality should be restored in a different way)
