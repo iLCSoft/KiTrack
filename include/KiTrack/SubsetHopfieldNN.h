@@ -18,6 +18,78 @@ namespace KiTrack {
       
    public:
       
+      /** Calculates the best set using a Hopfield Neural Network. After this the results can be accessed with 
+       * the getAccepted() and getRejected() methods (provided by the baseclass Subset).
+       * 
+       * This is a templated class to allow the reuse with objects from different.
+       * The goal is this: if you have a set of things that are somehow compatible or incompatible 
+       * with each other and you want a subset that only contains compatible ones and has a high quality, to find
+       * this subset.
+       * 
+       * For example: you plan a concert where a lot of different artists shall perform together. You have 20 that
+       * you are interested in asking. BUT: not all of them get along together very well. So artist 1 might be incompatible
+       * with artist 2 and 7 for some arbitrary reasons. And artist 2 is incompatible with artist 1,3 and 13 and so on.
+       * In order not to completely mess up the concert you can only invite artists who are entirely compatible with each other.
+       * AND: not all artists are equal: some are really famous and some are pretty mediocre.
+       * So you want to find a set of artists with the highest possible quality which is completely compatible.
+       * 
+       * This is done by this class. The algorithm used for it is a Hopfield Neural Network (HNN).
+       * 
+       * In order to work it needs to know two things: how to calculate the quality of an element and how to determine
+       * if two elements are compatible. These are of course things the user has to provide.
+       * For both a functor object is needed.
+       * 
+       * Here is how it could look like in the artist example:
+       * 
+\verbatim
+ 
+class AristQI{
+  
+   public:
+ 
+   inline double operator()( Artist artist ){
+   
+      return artist.numberOfFans()/nPeopleOnEarth;    // a number between 0 and 1
+      
+  }
+
+};
+
+class ArtistCompatibility{
+
+public:
+
+   inline bool operator()( Artist artistA, Artist artistB ){
+   
+      if( artistA.hates( artistB ) ) return false;
+      else return true; 
+     
+   }
+
+};
+
+
+//Somewhere within the program:
+
+ArtistCompatibility comp;
+ArtistQI qi;
+
+SubsetHopfieldNN< Artist > subset;
+subset.add( vecOfArtists );                                 
+subset.calculateBestSet( comp, qi );
+
+std::vector< Artist > artistsToInvite = subset.getAccepted();
+std::vector< Artist > artistsToStayAtHome = subset.getRejected();
+
+
+\endverbatim
+       * 
+       * 
+       * @param areCompatible a functor of type bool( T, T ) that should tell whether two elements are compatible
+       * or not.
+       * 
+       * @param getQI a functor of type double( T ) that returns the quality of an element and should range between 0 and 1.
+       */
       template< class GetQI, class AreCompatible >
       void calculateBestSet( AreCompatible areCompatible, GetQI getQI );
       
@@ -104,7 +176,7 @@ namespace KiTrack {
       // output of the G matrix:
       if( !G.empty() ){
          
-         streamlog_out(DEBUG7) << "G:\n";
+         streamlog_out(DEBUG2) << "G:\n";
          
          
          for ( unsigned i=0; i < G.size(); i++ ){
@@ -112,11 +184,11 @@ namespace KiTrack {
             
             for ( unsigned j=0; j < G[i].size(); j++ ){
                
-               streamlog_out(DEBUG7) << G[i][j] << "  ";
+               streamlog_out(DEBUG2) << G[i][j] << "  ";
                
             }
             
-            streamlog_out(DEBUG7) << "\n";
+            streamlog_out(DEBUG2) << "\n";
             
          }
         
@@ -193,9 +265,9 @@ namespace KiTrack {
          
          unsigned nIterations=1;
          
-         streamlog_out(DEBUG6) << "states: ( ";
-         for ( unsigned int i=0; i< states.size(); i++) streamlog_out(DEBUG6) << states[i] << " "; 
-         streamlog_out(DEBUG6) << ")\n";
+         streamlog_out(DEBUG1) << "states: ( ";
+         for ( unsigned int i=0; i< states.size(); i++) streamlog_out(DEBUG1) << states[i] << " "; 
+         streamlog_out(DEBUG1) << ")\n";
          
          while ( !net.doIteration() ){ // while the Neural Net is not (yet) stable
             
@@ -203,11 +275,11 @@ namespace KiTrack {
             
             std::vector <double> newStates = net.getStates();
             
-            streamlog_out(DEBUG6) << "states: ( ";      
+            streamlog_out(DEBUG1) << "states: ( ";      
             
-            for ( unsigned int i=0; i< newStates.size(); i++) streamlog_out(DEBUG6) << newStates[i] << " "; 
+            for ( unsigned int i=0; i< newStates.size(); i++) streamlog_out(DEBUG1) << newStates[i] << " "; 
             
-            streamlog_out(DEBUG6) << ")\n";
+            streamlog_out(DEBUG1) << ")\n";
             
          }
          
