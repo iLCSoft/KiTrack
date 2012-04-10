@@ -28,7 +28,9 @@ Version History
   -----------------------------
  | changes since last version  |
   -----------------------------
- 
+      
+      - Made parameters in SubsetHopfieldNN setable ( omega, TStart, ... )
+
       - Added new classes for SubsetFinding: 
          Subset, SubsetSimple, SubsetHopfieldNN
          They are based on the classes: ITrackSubset, TrackSubsetSimple and TrackSubsetHopfieldNN

@@ -114,6 +114,14 @@ std::vector< Artist > artistsToStayAtHome = subset.getRejected();
       void setInitStateMax( double initStateMax ){ _initStateMax = initStateMax; }
       void setActivationThreshold( double activationThreshold ){ _activationThreshold = activationThreshold; }
       
+      double getTStart(){ return _TStart; }
+      double getTInf(){ return _TInf; }
+      double getOmega(){ return _omega; }
+      double getLimitForStable(){ return _limitForStable; }
+      double getInitStateMin(){ return _initStateMin; }
+      double getInitStateMax(){ return _initStateMax; }
+      double getActivationThreshold(){ return _activationThreshold; }
+      
    protected:
       
       
