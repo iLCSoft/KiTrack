@@ -78,7 +78,7 @@ namespace KiTrack{
          
          std::vector < double > _w0;
          
-         /** temperatur */
+         /** temperature */
          double _T;
          
          /** temperature after infinite iterations */

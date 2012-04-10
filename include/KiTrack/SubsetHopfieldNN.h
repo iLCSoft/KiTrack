@@ -94,7 +94,37 @@ std::vector< Artist > artistsToStayAtHome = subset.getRejected();
       void calculateBestSet( AreCompatible areCompatible, GetQI getQI );
       
       
-   
+      SubsetHopfieldNN(){ 
+       
+         _TStart = 2.1;
+         _TInf = 0.1;
+         _omega = 0.75;
+         _limitForStable = 0.01;
+         _initStateMin = 0.;
+         _initStateMax = 0.1;
+         _activationThreshold = 0.75;
+         
+      }
+      
+      void setTStart( double tStart ){ _TStart = tStart; }
+      void setTInf( double tInf ){ _TInf = tInf; }
+      void setOmega( double omega ){ _omega = omega; }
+      void setLimitForStable( double limitForStable ){ _limitForStable = limitForStable; }
+      void setInitStateMin( double initStateMin ){ _initStateMin = initStateMin; }
+      void setInitStateMax( double initStateMax ){ _initStateMax = initStateMax; }
+      void setActivationThreshold( double activationThreshold ){ _activationThreshold = activationThreshold; }
+      
+   protected:
+      
+      
+      double _TStart;
+      double _TInf;
+      double _omega;
+      double _limitForStable;
+      double _initStateMin;
+      double _initStateMax;
+      double _activationThreshold;
+      
    };
    
    
@@ -125,10 +155,6 @@ std::vector< Artist > artistsToStayAtHome = subset.getRejected();
       states.resize( nElements );
       
       
-      double omega = 0.75;
-      
-      double initStateMin = 0.;
-      double initStateMax = 0.1;
       
       
       /**********************************************************************************************/
@@ -148,7 +174,7 @@ std::vector< Artist > artistsToStayAtHome = subset.getRejected();
          
          
          // Set an initial state
-         states[i] = CLHEP::RandFlat::shoot ( initStateMin , initStateMax ); //random ( uniformly ) values from initStateMin to initStateMax
+         states[i] = CLHEP::RandFlat::shoot ( _initStateMin , _initStateMax ); //random ( uniformly ) values from initStateMin to initStateMax
          
          
          // Fill the states in the G matrix. (whether two elements are compatible or not
@@ -257,11 +283,11 @@ std::vector< Artist > artistsToStayAtHome = subset.getRejected();
       
       if( !elements.empty() ){
          
-         HopfieldNeuralNet net( G , QI , states , omega);
+         HopfieldNeuralNet net( G , QI , states , _omega);
          
-         net.setT (2.1);
-         net.setTInf(0.1);
-         net.setLimitForStable(0.01);
+         net.setT ( _TStart );
+         net.setTInf( _TInf );
+         net.setLimitForStable( _limitForStable );
          
          unsigned nIterations=1;
          
@@ -297,13 +323,12 @@ std::vector< Artist > artistsToStayAtHome = subset.getRejected();
          
          states = net.getStates();
          
-         double activationMin = 0.75; // the minimal value of state to be accepted
          
          
          for ( unsigned i=0; i < states.size(); i++ ){
             
             
-            if ( states[i] >= activationMin ){
+            if ( states[i] >= _activationThreshold ){
                
                this->_acceptedElements.push_back( elements[i] );
                nAccepted++;
