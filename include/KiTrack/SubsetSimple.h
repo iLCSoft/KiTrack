@@ -69,6 +69,7 @@ class AristQI{
    
 public:
    
+   // returns the quality of an artist (a value between 0 and 1, 0 being bad and 1 being fantastic)  
    inline double operator()( Artist artist ){
       
       return artist.numberOfFans()/nPeopleOnEarth;    // a number between 0 and 1
@@ -81,6 +82,7 @@ class ArtistCompatibility{
    
 public:
    
+   // returns whether two artists are compatible
    inline bool operator()( Artist artistA, Artist artistB ){
       
       if( artistA.hates( artistB ) ) return false;

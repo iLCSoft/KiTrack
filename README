@@ -28,8 +28,10 @@ Version History
   -----------------------------
  | changes since last version  |
   -----------------------------
+
+      - Added documentation of the Hopfield Neural Network (for classes HopfielNeuralNet and SubsetHopfieldNN)
       
-      - Made parameters in SubsetHopfieldNN setable ( omega, TStart, ... )
+      - Made setter and getter functions for parameters in SubsetHopfieldNN
 
       - Added new classes for SubsetFinding: 
          Subset, SubsetSimple, SubsetHopfieldNN

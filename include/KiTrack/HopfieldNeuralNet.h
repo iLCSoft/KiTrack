@@ -9,6 +9,7 @@ namespace KiTrack{
 
    /**
     * Represents a hopfield neuronal network
+    * (see <a href="../SubsetHopfieldNN.pdf">this</a> for more info).
     * 
     * Author: Robin Glattauer
     */

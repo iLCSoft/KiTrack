@@ -18,8 +18,12 @@ namespace KiTrack {
       
    public:
       
-      /** Calculates the best set using a Hopfield Neural Network. After this the results can be accessed with 
+      /** Calculates the best set using a Hopfield Neural Network 
+       * (see <a href="../SubsetHopfieldNN.pdf">this</a> for more info) . 
+       * 
+       * After this the results can be accessed with 
        * the getAccepted() and getRejected() methods (provided by the baseclass Subset).
+       *
        * 
        * This is a templated class to allow the reuse with objects from different.
        * The goal is this: if you have a set of things that are somehow compatible or incompatible 
@@ -47,6 +51,7 @@ class AristQI{
   
    public:
  
+   // returns the quality of an artist (a value between 0 and 1, 0 being bad and 1 being fantastic)  
    inline double operator()( Artist artist ){
    
       return artist.numberOfFans()/nPeopleOnEarth;    // a number between 0 and 1
@@ -59,6 +64,7 @@ class ArtistCompatibility{
 
 public:
 
+   // returns whether two artists are compatible
    inline bool operator()( Artist artistA, Artist artistB ){
    
       if( artistA.hates( artistB ) ) return false;
