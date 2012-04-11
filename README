@@ -29,6 +29,9 @@ Version History
  | changes since last version  |
   -----------------------------
 
+      - Erased track bound subset classes ITrackSubset, TrackSubsetHopfieldNN and TrackSubsetSimple as their 
+         functionality is now covered by the template classes Subset, SubsetSimple and SubsetHopfieldNN.
+
       - Added documentation of the Hopfield Neural Network (for classes HopfielNeuralNet and SubsetHopfieldNN)
       
       - Made setter and getter functions for parameters in SubsetHopfieldNN
