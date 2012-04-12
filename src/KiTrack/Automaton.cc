@@ -135,7 +135,8 @@ void Automaton::lengthenSegments(){
 
             // Set the skipped layers.                  For an explanation see Info A above
             int skippedLayers = segment->getLayer() - child->getLayer() - 1;
-            newSegment->setSkippedLayers( skippedLayers );      //
+            if( skippedLayers < 0 ) throw InvalidParameter( "skippedLayers can't be < 0!" );
+            newSegment->setSkippedLayers( unsigned(skippedLayers) );      //
 
             streamlog_out( DEBUG1 ) << " Created longer segment: " << segment->getHits().size()
                                     << "-->" << newSegment->getHits().size()
@@ -294,7 +295,7 @@ void Automaton::doAutomaton(){
 
             
             //Simulate skipped layers
-            std::vector < int > state = parent->getState();
+            std::vector < int >& state = parent->getState();
 
             for ( int j= state.size()-1; j>=1; j--){
 
@@ -306,7 +307,7 @@ void Automaton::doAutomaton(){
                }
             }
 
-            parent->setState( state );
+            
 
             
             if ( parent->isActive() ){

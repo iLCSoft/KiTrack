@@ -40,24 +40,6 @@ void Segment::resetState(){
 }
 
 
-void Segment::setSkippedLayers( int skippedLayers ){
-   
-   
-   if (skippedLayers >= 0 ){
-      
-      
-      _state.resize( skippedLayers + 1 );
-      
-   }
-   else {
-      
-      
-      //TODO: make an exception here!
-      
-      _state.resize(0);
-      
-   }
-   
-}
+
    
 
