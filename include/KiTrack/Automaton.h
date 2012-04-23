@@ -144,14 +144,7 @@ namespace KiTrack{
       /**
        * @return All the segments currently saved in the automaton
        */
-      std::vector <Segment*> getSegments();
-
-      /*
-       * Draws the segments stored in the automaton in CED.
-       * Segments will be colored according to their state.
-       * Also the higher the state, the higher the thickness of the lines.
-       */
-//       void drawSegments();
+      std::vector <const Segment*> getSegments() const;
       
       
    private:
