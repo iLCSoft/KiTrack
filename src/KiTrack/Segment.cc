@@ -12,6 +12,8 @@ Segment::Segment( std::vector <IHit*> hits){
    _parents.clear();
 
    _active = true;
+   
+   _layer=0;
 }
 
 
@@ -24,6 +26,8 @@ Segment::Segment( IHit* hit){
    _parents.clear();
    
    _active = true;
+   
+   _layer=0;
 }
 
 

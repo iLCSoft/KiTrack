@@ -38,7 +38,8 @@ HopfieldNeuralNet::HopfieldNeuralNet( std::vector < std::vector <bool> > G , std
    
    // Build the W matrix. (the matrix of the influences including their force)
    
-   double comp = (1. - omega) / double (nNeurons);
+   double comp = 1;
+   if (nNeurons > 0 ) comp = (1. - omega) / double (nNeurons);
    
 
    for (unsigned int i=0; i< nNeurons ; i++){ 
