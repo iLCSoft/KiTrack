@@ -28,6 +28,7 @@ Version History
   -----------------------------
  | changes since last version  |
   -----------------------------
+   
 
       - Erased track bound subset classes ITrackSubset, TrackSubsetHopfieldNN and TrackSubsetSimple as their 
          functionality is now covered by the template classes Subset, SubsetSimple and SubsetHopfieldNN.
@@ -42,6 +43,8 @@ Version History
          The difference is they are templated, thus the basic algorithms can be used with any class.
          So if one wants for example to use the Hopfield Network Subset with an own track class or with
          something that is not even a track, this can now be done.
+      
+      - Added doxygen mainpage
  
 
   ---------

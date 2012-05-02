@@ -13,8 +13,7 @@ IF( DOXYGEN_FOUND )
     SET( DOC_BIN_DIR "${PROJECT_BINARY_DIR}/docbuild" )
     
     # directories to search for documentation
-    SET( DOX_INPUT ../include ../src )
-
+    SET( DOX_INPUT overview.html ../include ../src )
 
     # custom command to build documentation
     ADD_CUSTOM_COMMAND(
