@@ -6,7 +6,7 @@
 
 namespace KiTrack{
    
-   /** Criterion: check for the change of the 2D angle
+   /** Criterion: make circles from the semgments and measure the distances of their centers
     */
    class Crit4_DistOfCircleCenters : public ICriterion{
       

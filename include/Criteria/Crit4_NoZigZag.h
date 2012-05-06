@@ -6,7 +6,9 @@
 
 namespace KiTrack{
    
-   /** Criterion: forbids zig zagging
+   /** Criterion: forbids zig zagging: measure the angles in the xy plane, transpose them to the rane from -pi to pi
+    * and multiply: if there is a zigzag, the sign of the angle switches and the product of both angles becomes
+    * negative.
     */
    class Crit4_NoZigZag : public ICriterion{
       

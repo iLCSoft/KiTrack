@@ -6,7 +6,7 @@
 
 namespace KiTrack{
    
-   /** Criterion: ...
+   /** Criterion: the transversal momentum 
     */
    class Crit3_PT : public ICriterion{
       

@@ -6,7 +6,7 @@
 
 namespace KiTrack{
    
-   /** Criterion: ...
+   /** Criterion: the distance of the IP from the circle the 3 hits form
     */
    class Crit3_IPCircleDist : public ICriterion{
       

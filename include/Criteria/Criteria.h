@@ -13,17 +13,20 @@
 #include "Criteria/Crit3_ChangeRZRatio.h"  
 #include "Criteria/Crit3_PT.h"
 #include "Criteria/Crit3_2DAngle.h"
+#include "Criteria/Crit3_2DAngleTimesR.h"
 #include "Criteria/Crit3_3DAngle.h"
+#include "Criteria/Crit3_3DAngleTimesR.h"
 #include "Criteria/Crit3_IPCircleDist.h"  
+#include "Criteria/Crit3_IPCircleDistTimesR.h"
 
 #include "Criteria/Crit4_2DAngleChange.h"    
 #include "Criteria/Crit4_3DAngleChange.h" 
+#include "Criteria/Crit4_3DAngleChangeNormed.h"
 #include "Criteria/Crit4_DistToExtrapolation.h"  
 #include "Criteria/Crit4_PhiZRatioChange.h"
 #include "Criteria/Crit4_DistOfCircleCenters.h"
 #include "Criteria/Crit4_NoZigZag.h"
 #include "Criteria/Crit4_RChange.h"
-
 
 
 

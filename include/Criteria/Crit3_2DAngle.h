@@ -6,7 +6,7 @@
 
 namespace KiTrack{
 
-   /** Criterion: the angle between two 2-segments
+   /** Criterion: the angle between two 2-segments in the xy - plane
     */
    class Crit3_2DAngle : public ICriterion{
 

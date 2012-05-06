@@ -15,17 +15,23 @@ std::set< std::string > Criteria::getAllCriteriaNames(){
 
    critNames.insert( "Crit3_ChangeRZRatio" );
    critNames.insert( "Crit3_PT" );
-   critNames.insert( "Crit3_2DAngle" );
-   critNames.insert( "Crit3_3DAngle" );
-   critNames.insert( "Crit3_IPCircleDist" );
+//    critNames.insert( "Crit3_2DAngle" );
+   critNames.insert( "Crit3_2DAngleTimesR" );
+//    critNames.insert( "Crit3_3DAngle" );
+   critNames.insert( "Crit3_3DAngleTimesR" );
+//    critNames.insert( "Crit3_IPCircleDist" );
+   critNames.insert( "Crit3_IPCircleDistTimesR" );
+   
 
    critNames.insert( "Crit4_2DAngleChange" );
-   critNames.insert( "Crit4_3DAngleChange" );
+//    critNames.insert( "Crit4_3DAngleChange" );
+   critNames.insert( "Crit4_3DAngleChangeNormed" );
    critNames.insert( "Crit4_DistToExtrapolation" );
    critNames.insert( "Crit4_PhiZRatioChange" );
-   critNames.insert( "Crit4_DistOfCircleCenters" );
+//    critNames.insert( "Crit4_DistOfCircleCenters" );
    critNames.insert( "Crit4_NoZigZag" );
    critNames.insert( "Crit4_RChange" );
+  
 
    return critNames;
 
@@ -108,13 +114,21 @@ ICriterion* Criteria::createCriterion( std::string critName, float min , float m
    
    else if ( critName == "Crit3_2DAngle" ) return ( new Crit3_2DAngle( min , max ) );
    
+   else if ( critName == "Crit3_2DAngleTimesR" ) return ( new Crit3_2DAngleTimesR( min , max ) );
+   
    else if ( critName == "Crit3_3DAngle" ) return ( new Crit3_3DAngle( min , max ) );
    
+   else if ( critName == "Crit3_3DAngleTimesR" ) return ( new Crit3_3DAngleTimesR( min , max ) );
+   
    else if ( critName == "Crit3_IPCircleDist" ) return ( new Crit3_IPCircleDist( min , max ) );
+   
+   else if ( critName == "Crit3_IPCircleDistTimesR" ) return ( new Crit3_IPCircleDistTimesR( min , max ) );
    
    else if ( critName == "Crit4_2DAngleChange" ) return ( new Crit4_2DAngleChange( min , max ) );
    
    else if ( critName == "Crit4_3DAngleChange" ) return ( new Crit4_3DAngleChange( min , max ) );
+   
+   else if ( critName == "Crit4_3DAngleChangeNormed" ) return ( new Crit4_3DAngleChangeNormed( min , max ) );
    
    else if ( critName == "Crit4_DistToExtrapolation" ) return ( new Crit4_DistToExtrapolation( min , max ) );
    
@@ -125,6 +139,7 @@ ICriterion* Criteria::createCriterion( std::string critName, float min , float m
    else if ( critName == "Crit4_NoZigZag" ) return ( new Crit4_NoZigZag( min , max ) );
    
    else if ( critName == "Crit4_RChange" ) return ( new Crit4_RChange( min , max ) );
+   
    
    
    else {
@@ -184,13 +199,21 @@ void Criteria::getLeftRight( std::string critName, float & left, float & right )
    
    else if ( critName == "Crit3_2DAngle" ) { left = 0.; right = 1.; }
    
+   else if ( critName == "Crit3_2DAngleTimesR" ) { left = 0.; right = 1.; }
+   
    else if ( critName == "Crit3_3DAngle" ) { left = 0.; right = 1.; }
    
+   else if ( critName == "Crit3_3DAngleTimesR" ) { left = 0.; right = 1.; }
+   
    else if ( critName == "Crit3_IPCircleDist" ) { left = 0.; right = 1.; }
+   
+   else if ( critName == "Crit3_IPCircleDistTimesR" ) { left = 0.; right = 1.; }
    
    else if ( critName == "Crit4_2DAngleChange" ) { left = 0.5; right = 0.5; }
    
    else if ( critName == "Crit4_3DAngleChange" ) { left = 0.5; right = 0.5; }
+   
+   else if ( critName == "Crit4_3DAngleChangeNormed" ) { left = 0.5; right = 0.5; }
    
    else if ( critName == "Crit4_DistToExtrapolation" ) { left = 0.; right = 1.; }
    
@@ -201,9 +224,10 @@ void Criteria::getLeftRight( std::string critName, float & left, float & right )
    else if ( critName == "Crit4_NoZigZag" ) { left = 0.5; right = 0.5; }
    
    else if ( critName == "Crit4_RChange" ) { left = 0.5; right = 0.5; }
-     
+   
    else { left = 0.5; right = 0.5; }
    
+ 
 }
    
 

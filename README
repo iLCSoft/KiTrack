@@ -45,6 +45,10 @@ Version History
          something that is not even a track, this can now be done.
       
       - Added doxygen mainpage
+      
+      - Added new criteria, that are modified versions of the existing ones, but are taking into account the dependence on pt
+      
+      - Commented out some old criteria in Criteria.cc, so they don't belong to the standard criteria any more
  
 
   ---------

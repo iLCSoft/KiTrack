@@ -1,14 +1,14 @@
-#ifndef Crit4_2DAngleChange_h
-#define Crit4_2DAngleChange_h
+#ifndef Crit4_3DAngleChangeNormed_h
+#define Crit4_3DAngleChangeNormed_h
 
 
 #include "Criteria/ICriterion.h"
 
 namespace KiTrack{
    
-   /** Criterion: change of the angle between segments in the xy plane
+   /** Criterion: check for the change of the 3D angle and normalise it with R
     */
-   class Crit4_2DAngleChange : public ICriterion{
+   class Crit4_3DAngleChangeNormed : public ICriterion{
       
       
       
@@ -17,11 +17,11 @@ namespace KiTrack{
       /**
        * @param changeMax 
        */
-      Crit4_2DAngleChange ( float changeMin , float changeMax );
+      Crit4_3DAngleChangeNormed ( float changeMin , float changeMax );
       
       virtual bool areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength );
       
-      virtual ~Crit4_2DAngleChange(){};
+      virtual ~Crit4_3DAngleChangeNormed(){};
       
    private:
       

@@ -6,7 +6,7 @@
 
 namespace KiTrack{
    
-   /** Criterion: check for the change of the 2D angle
+   /** Criterion: check for the change of the radius of the circles that can be made from the 3-hit segments
     */
    class Crit4_RChange : public ICriterion{
       

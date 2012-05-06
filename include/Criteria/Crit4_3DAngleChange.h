@@ -6,7 +6,7 @@
 
 namespace KiTrack{
    
-   /** Criterion: check for the change of the 2D angle
+   /** Criterion: change of the angle between segments
     */
    class Crit4_3DAngleChange : public ICriterion{
       
