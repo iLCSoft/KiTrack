@@ -141,11 +141,11 @@ std::vector< Artist > artistsToStayAtHome = subset.getRejected();
       SorterQI< T, GetQI > sorterQI( getQI );
       sort( elements.begin(), elements.end() , sorterQI );
       
-      streamlog_out( DEBUG8 ) << "The elements and their QIs sorted:\n";
+      streamlog_out( DEBUG3 ) << "The elements and their QIs sorted:\n";
       for( unsigned i=0; i < elements.size(); i++ ){
          
          double qi = getQI( elements[i] );
-         streamlog_out( DEBUG8 ) << elements[i] << "\t" << qi << "\n";
+         streamlog_out( DEBUG3 ) << elements[i] << "\t" << qi << "\n";
          
       }
       
@@ -169,7 +169,7 @@ std::vector< Artist > artistsToStayAtHome = subset.getRejected();
                nRejected++;
                this->_rejectedElements.push_back( elements[i] );
                
-               streamlog_out( DEBUG7 ) << "reject " << elements[i] << "\n";
+               streamlog_out( DEBUG2 ) << "reject " << elements[i] << "\n";
                // and delete it from the elements we are looking at
                elements.erase( elements.begin() + i );
                i--;
@@ -179,7 +179,7 @@ std::vector< Artist > artistsToStayAtHome = subset.getRejected();
          }
          
          // store the first element
-         streamlog_out( DEBUG7 ) << "accept " << elements[0] << "\n";
+         streamlog_out( DEBUG2 ) << "accept " << elements[0] << "\n";
          nAccepted++;
          this->_acceptedElements.push_back( elements[0] );
          
