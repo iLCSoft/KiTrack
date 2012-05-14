@@ -15,20 +15,20 @@ std::set< std::string > Criteria::getAllCriteriaNames(){
 
    critNames.insert( "Crit3_ChangeRZRatio" );
    critNames.insert( "Crit3_PT" );
-//    critNames.insert( "Crit3_2DAngle" );
+   critNames.insert( "Crit3_2DAngle" );
    critNames.insert( "Crit3_2DAngleTimesR" );
-//    critNames.insert( "Crit3_3DAngle" );
+   critNames.insert( "Crit3_3DAngle" );
    critNames.insert( "Crit3_3DAngleTimesR" );
-//    critNames.insert( "Crit3_IPCircleDist" );
+   critNames.insert( "Crit3_IPCircleDist" );
    critNames.insert( "Crit3_IPCircleDistTimesR" );
    
 
    critNames.insert( "Crit4_2DAngleChange" );
-//    critNames.insert( "Crit4_3DAngleChange" );
+   critNames.insert( "Crit4_3DAngleChange" );
    critNames.insert( "Crit4_3DAngleChangeNormed" );
    critNames.insert( "Crit4_DistToExtrapolation" );
    critNames.insert( "Crit4_PhiZRatioChange" );
-//    critNames.insert( "Crit4_DistOfCircleCenters" );
+   critNames.insert( "Crit4_DistOfCircleCenters" );
    critNames.insert( "Crit4_NoZigZag" );
    critNames.insert( "Crit4_RChange" );
   
@@ -97,8 +97,6 @@ ICriterion* Criteria::createCriterion( std::string critName, float min , float m
    
    
    if ( critName == "Crit2_RZRatio" ) return ( new Crit2_RZRatio( min , max ) );
-   
-   else if ( critName == "Crit2_RZRatio" ) return ( new Crit2_RZRatio( min , max ) );
    
    else if ( critName == "Crit2_StraightTrackRatio" ) return ( new Crit2_StraightTrackRatio( min , max ) );
    
