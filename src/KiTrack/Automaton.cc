@@ -11,13 +11,15 @@ void Automaton::addSegment ( Segment* segment ){
 
 
    if ( segment->getLayer() >= _segments.size() ) { //in case this layer is not included so far
-
+      
       _segments.resize( segment->getLayer() + 1 ); //resize the vector, so that the layer of the segment is now included
-
+      
    }
 
    _segments[ segment->getLayer() ].push_back ( segment );
 
+   _nConnections += segment->getChildren().size();
+   
 
 
 
@@ -235,6 +237,7 @@ void Automaton::lengthenSegments(){
       }
 
    }
+   _nConnections = nConnections;
 
    streamlog_out (DEBUG4) << " Made " << nConnections << " of " << nPossibleConnections
                           << " possible connections \n";
@@ -396,7 +399,8 @@ void Automaton::cleanBadStates(){
 
             for (std::list<Segment*>::iterator iChild = children.begin(); iChild != children.end(); iChild++ ){
 
-              (*iChild)->deleteParent ( segment );
+               (*iChild)->deleteParent ( segment );
+               _nConnections--;
 
             }
 
@@ -406,6 +410,7 @@ void Automaton::cleanBadStates(){
             for (std::list<Segment*>::iterator iParent = parents.begin(); iParent!= parents.end(); iParent++){
 
                (*iParent)->deleteChild ( segment );
+               _nConnections--;
 
             }
 
@@ -496,10 +501,13 @@ void Automaton::cleanBadConnections(){
             if ( areCompatible == false ){ // they are not compatible --> erase the connection
 
                nConnectionsErased++;
-
+               _nConnections--;
+               
                //erase the connection:
                parent->deleteChild ( child );
                child->deleteParent ( parent );
+               
+               
 
                //A small note here: although we deleted a child from the vector, this doesn't mean we have to do iSeg--!
                //Because we copied the value of segment->getChildren to the vector children. And this one doesn't change!

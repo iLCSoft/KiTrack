@@ -54,6 +54,8 @@ namespace KiTrack{
      
    public:
       
+      Automaton(): _nConnections(0){}
+      
       /**
        * delete all the segments
        */
@@ -69,7 +71,6 @@ namespace KiTrack{
        * to it.
        * Also connects those longer segments with each other. ( one becomes a parent and one a child )
        * Segments that don't have connected segments to use to get longer, will die here. 
-       * TODO: is this the best way? Should there be an alternative? Maybe in another method?
        */
       void lengthenSegments();
       
@@ -146,6 +147,7 @@ namespace KiTrack{
        */
       std::vector <const Segment*> getSegments() const;
       
+      unsigned getNumberOfConnections(){ return _nConnections; }
       
    private:
       
@@ -162,7 +164,7 @@ namespace KiTrack{
        */
       std::vector < ICriterion* > _criteria;
       
-
+      unsigned _nConnections;
       
       
       
