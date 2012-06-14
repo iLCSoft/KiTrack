@@ -28,6 +28,12 @@ Version History
   -----------------------------
  | changes since last version  |
   -----------------------------
+
+  ---------
+ | v01-02  |
+  ---------
+  
+      - Automaton: Added a counter of the connections between the segments
    
   ---------
  | v01-01  |
