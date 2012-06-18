@@ -44,6 +44,8 @@ namespace KiTrack{
       /** @return the distance to an other hit */
       float distTo( IHit* otherHit );
       
+      std::string getPositionInfo();
+      
       virtual ~IHit(){}
       
    protected:

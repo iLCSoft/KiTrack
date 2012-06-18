@@ -27,7 +27,7 @@ namespace KiTrack{
     * which essentially means, that they are not connected all the way through to layer 0.
     * 
     * After this the method cleanBadConnections() can be used, to get rid of all connections of segments, that don't fulfill
-    * the currently loaded criteria.
+    * the currently loaded criteria. TODO: this is not really needed in the current version
     * 
     * 
     * If another round of doAutomaton() wants to be used, you should first call the method resetStates, to set all states of
@@ -157,6 +157,7 @@ namespace KiTrack{
        * _segments[2] is a list with all segments on layer 2.
        * 
        * The segments will be deleted by the Automaton in the destructor
+       * 
        */
       std::vector < std::list < Segment* > > _segments;
       

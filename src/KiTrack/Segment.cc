@@ -1,5 +1,7 @@
 #include "KiTrack/Segment.h"
 
+#include <sstream>
+
 using namespace KiTrack;
 
 Segment::Segment( std::vector <IHit*> hits){ 
@@ -40,6 +42,22 @@ void Segment::resetState(){
       _state[i] = 0;
       
    }
+   
+}
+
+std::string Segment::getInfo(){
+   
+ 
+   std::stringstream info;
+   
+   for( unsigned i=0; i<_hits.size(); i++ ) info << _hits[i]->getPositionInfo();
+   
+   info << "[";
+   for( unsigned i=0; i+1<_state.size(); i++ ) info << _state[i] << ",";
+   info << _state.back() << "]";
+   
+   return info.str();
+   
    
 }
 

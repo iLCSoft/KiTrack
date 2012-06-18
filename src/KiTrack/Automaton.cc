@@ -81,7 +81,7 @@ void Automaton::lengthenSegments(){
    //   ( 2 - 0 - 1 = 1 --> segment->setSkippedLayers( 1 );
 
 
-
+   streamlog_out(DEBUG2) << "Next combining the shorter segments to longer ones\n";
 
    //----------------------------------------------------------------------------------------------//
    //                                                                                              //
@@ -111,21 +111,21 @@ void Automaton::lengthenSegments(){
 
          nShorterSegments++;
 
-         Segment* segment = *iSeg;
+         Segment* parent = *iSeg;
 
-         std::list <Segment*> children = segment->getChildren();
+         std::list <Segment*> children = parent->getChildren();
 
-         for ( std::list<Segment*>::iterator iChild=children.begin(); iChild !=children.end(); iChild++){ //over all children of this segment
+         for ( std::list<Segment*>::iterator iChild=children.begin(); iChild !=children.end(); iChild++){ //over all children of this parent
 
             Segment* child = *iChild;
 
-            //Combine the segment and the child to form a new longer segment
+            //Combine the parent and the child to form a new longer segment
 
-            //take all the hits from the segment
-            std::vector < IHit* > hits = segment->getHits();
+            //take all the hits from the parent
+            std::vector < IHit* > hits = parent->getHits();
 
-            //and also add the last hit from the child
-            hits.push_back( child->getHits().back() );
+            //and also add the inner hit from the child
+            hits.insert( hits.begin(), child->getHits().at(0) );
 
             //make the new (longer) segment
             Segment* newSegment = new Segment ( hits );
@@ -136,23 +136,24 @@ void Automaton::lengthenSegments(){
             newSegment->setLayer ( newLayer );
 
             // Set the skipped layers.                  For an explanation see Info A above
-            int skippedLayers = segment->getLayer() - child->getLayer() - 1;
+            int skippedLayers = parent->getLayer() - child->getLayer() - 1;
             if( skippedLayers < 0 ) throw InvalidParameter( "skippedLayers can't be < 0!" );
             newSegment->setSkippedLayers( unsigned(skippedLayers) );      //
 
-            streamlog_out( DEBUG1 ) << " Created longer segment: " << segment->getHits().size()
-                                    << "-->" << newSegment->getHits().size()
+            streamlog_out( DEBUG1 ) << "Created longer segment: " << parent->getHits().size()
+                                    << "hits -->" << newSegment->getHits().size()
                                     << " hits, layer = " << newLayer
                                     << ", skipped layers = " << skippedLayers <<"\n";
+            streamlog_out( DEBUG1 ) << "Combined: " << child->getInfo() << "<--with-->" << parent->getInfo() << "\n";
 
 
             //Erase the connection from the child to the parent segment and replace it with a link to the new
             //(longer) segment. ( and vice versa ) This way we can connect the longer segments easily after.
-            child->deleteParent( segment );
+            child->deleteParent( parent );
             child->addParent ( newSegment );
-            segment->deleteChild ( child );
-            segment->addChild ( newSegment );
-            //So now the new longer segment is a child of the old segment and a parent of the childsegment.
+            parent->deleteChild ( child );
+            parent->addChild ( newSegment );
+            //So now the new longer segment is a child of the old parent and a parent of the childsegment.
             //TODO: really explain this better
 
             //Save the new segment in the new vector[][]
@@ -173,6 +174,9 @@ void Automaton::lengthenSegments(){
    //                                                                                              //
    //----------------------------------------------------------------------------------------------//
 
+   streamlog_out(DEBUG2) << "Next connecting the new longer segments\n";
+   
+   
    unsigned nConnections=0;
    unsigned nPossibleConnections=0;
 
@@ -203,6 +207,7 @@ void Automaton::lengthenSegments(){
                // Check if they are compatible
                
                bool areCompatible = true;
+               ICriterion* theFailedCrit = NULL; 
                
                //check all criteria (or at least until one returns false)
                for ( unsigned iCrit = 0; iCrit < _criteria.size(); iCrit++ ){
@@ -210,7 +215,9 @@ void Automaton::lengthenSegments(){
                   
                   if ( _criteria[iCrit]->areCompatible ( parent , child ) == false ){
                      
+                     
                      areCompatible = false;
+                     theFailedCrit = _criteria[iCrit];
                      break;
                   
                   }
@@ -224,6 +231,15 @@ void Automaton::lengthenSegments(){
                   parent->addChild( child );
                 
                   nConnections++;
+                  
+                  streamlog_out( DEBUG1 ) << "Connected: " << child->getInfo() << "<--with-->" << parent->getInfo() << "\n";
+                  
+               }
+               else{
+                  
+                  streamlog_out( DEBUG0 ) << "NOT Connected: " << child->getInfo() << "<--XXXX-->" << parent->getInfo() << "\n";
+                  if( theFailedCrit != NULL ) streamlog_out( DEBUG0 ) << "Failed first at criterion: " << theFailedCrit->getName() << "\n";
+                  
                }
 
                
@@ -239,7 +255,7 @@ void Automaton::lengthenSegments(){
    }
    _nConnections = nConnections;
 
-   streamlog_out (DEBUG4) << " Made " << nConnections << " of " << nPossibleConnections
+   streamlog_out (DEBUG4) << "Made " << nConnections << " of " << nPossibleConnections
                           << " possible connections \n";
 
 
@@ -358,7 +374,7 @@ void Automaton::doAutomaton(){
    }
 
 
-   streamlog_out(DEBUG4) << " Automaton performed using " << nIterations << " iterations.\n";
+   streamlog_out(DEBUG4) << "Automaton performed using " << nIterations << " iterations.\n";
 
 
 
@@ -427,8 +443,8 @@ void Automaton::cleanBadStates(){
    }
 
 
-   streamlog_out( DEBUG4 ) << " Erased segments because of bad states= " << nErasedSegments << "\n";
-   streamlog_out( DEBUG4 ) << " Kept segments because of good states= " << nKeptSegments << "\n";
+   streamlog_out( DEBUG4 ) << "Erased segments because of bad states= " << nErasedSegments << "\n";
+   streamlog_out( DEBUG4 ) << "Kept segments because of good states= " << nKeptSegments << "\n";
 
 
 
@@ -528,8 +544,8 @@ void Automaton::cleanBadConnections(){
    }
 
 
-   streamlog_out( DEBUG4 ) << " Erased bad connections= " << nConnectionsErased << "\n";
-   streamlog_out( DEBUG4 ) << " Kept good connections= " << nConnectionsKept << "\n";
+   streamlog_out( DEBUG4 ) << "Erased bad connections= " << nConnectionsErased << "\n";
+   streamlog_out( DEBUG4 ) << "Kept good connections= " << nConnectionsKept << "\n";
 
 
 
@@ -542,23 +558,23 @@ std::vector < std::vector< IHit* > > Automaton::getTracksOfSegment ( Segment* se
 
    std::vector < std::vector< IHit* > > tracks; //the vector of the tracks to be returned
 
-   std::vector <IHit*> segHits = segment->getHits(); // the autHits of the segment
+   std::vector <IHit*> segHits = segment->getHits(); // the hits of the segment
 
    
 
    //add the outer hit
-   if ( segHits[0]->isVirtual() == false ) hits.push_back ( segHits[0] );  //Of course add only real hits to the track
+   if ( segHits.back()->isVirtual() == false ) hits.push_back ( segHits.back() );  //Of course add only real hits to the track
 
 
    std::list <Segment*> children = segment->getChildren();
 
    if ( children.empty() ){ //No more children --> we are at the bottom --> start a new Track here
-
+      
       //add the rest of the hits to the vector
-      for ( unsigned int i = 1 ; i < segHits.size(); i++){
+      for ( int i = segHits.size()-2 ; i >= 0; i--){
          
-         if ( segHits[i]->isVirtual() == false ) hits.push_back ( segHits[i] );
-         
+        if ( segHits[i]->isVirtual() == false ) hits.push_back ( segHits[i] );
+        
       }
       
       
@@ -569,8 +585,8 @@ std::vector < std::vector< IHit* > > Automaton::getTracksOfSegment ( Segment* se
          tracks.push_back ( hits );
          
       }
-
-
+      
+      
    }
    else{// there are still children below --> so just take all their tracks and do it again
       

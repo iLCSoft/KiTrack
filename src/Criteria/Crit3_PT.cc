@@ -30,9 +30,9 @@ bool Crit3_PT::areCompatible( Segment* parent , Segment* child )throw( BadSegmen
    if (( parent->getHits().size() == 2 )&&( child->getHits().size() == 2 )){ //a criterion for 2-segments
 
 
-      IHit* a = parent->getHits()[0];
-      IHit* b = parent->getHits()[1];
-      IHit* c = child-> getHits()[1];
+      IHit* a = child->getHits()[0];
+      IHit* b = child->getHits()[1];
+      IHit* c = parent-> getHits()[1];
       
       float ax = a->getX();
       float ay = a->getY();

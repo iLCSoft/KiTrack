@@ -31,10 +31,10 @@ bool Crit4_3DAngleChangeNormed::areCompatible( Segment* parent , Segment* child 
       
       
       
-      IHit* a = parent->getHits()[0];
-      IHit* b = parent->getHits()[1];
-      IHit* c = parent->getHits()[2];
-      IHit* d = child-> getHits()[2];
+      IHit* a = child->getHits()[0];
+      IHit* b = child->getHits()[1];
+      IHit* c = child->getHits()[2];
+      IHit* d = parent-> getHits()[2];
       
       float ax = a->getX();
       float ay = a->getY();

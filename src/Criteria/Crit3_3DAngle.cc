@@ -36,9 +36,9 @@ bool Crit3_3DAngle::areCompatible( Segment* parent , Segment* child )throw( BadS
       
 
 
-      IHit* a = parent->getHits()[0];
-      IHit* b = parent->getHits()[1];
-      IHit* c = child-> getHits()[1];
+      IHit* a = child->getHits()[0];
+      IHit* b = child->getHits()[1];
+      IHit* c = parent-> getHits()[1];
       
       float ax = a->getX();
       float ay = a->getY();
@@ -82,6 +82,7 @@ bool Crit3_3DAngle::areCompatible( Segment* parent , Segment* child )throw( BadS
       if ( denomSquared > 0.){ //don't divide by 0
       
          double cosThetaSquared = numerator * numerator / ( uSquared * vSquared );
+         if( cosThetaSquared > 1. ) cosThetaSquared = 1; // prevent rounding errors: cosTheta can mathematically never be bigger than 1!!!
          
          if (_saveValues){
             

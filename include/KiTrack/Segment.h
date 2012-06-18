@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <list>
+#include <string>
 
 #include "KiTrack/IHit.h"
 
@@ -12,7 +13,6 @@ namespace KiTrack{
    /** A Segment is something like a track or a part of a track: it consists of hits linked together.
     *
     * It is used by the class Automaton, which is a cellular automaton used for tracking.
-    * For information on how it works see: TODO
     * 
     */   
    class Segment {
@@ -50,6 +50,9 @@ namespace KiTrack{
          
          bool isActive() const { return _active;}
          void setActive( bool active ){ _active = active; }
+         
+         /** @return infos about the segment */
+         std::string getInfo();
      
    private:
          

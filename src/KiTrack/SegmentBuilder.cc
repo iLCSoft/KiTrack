@@ -117,6 +117,7 @@ Automaton SegmentBuilder::get1SegAutomaton(){
                   
                   
                   nConnections++;              
+                  streamlog_out( DEBUG1 ) << "Connected: " << child->getInfo() << "<--with-->" << parent->getInfo() << "\n"; 
                   
                }                                    
                
@@ -137,9 +138,9 @@ Automaton SegmentBuilder::get1SegAutomaton(){
    }
    
    
-   streamlog_out(DEBUG4) << " Number of connections made " << nConnections <<"\n";
+   streamlog_out(DEBUG4) << "Number of connections made " << nConnections <<"\n";
 
-   streamlog_out( DEBUG4 ) << " Number of 1-segments, that got stored in the automaton: " << nStoredSegments <<"\n";
+   streamlog_out( DEBUG4 ) << "Number of 1-segments, that got stored in the automaton: " << nStoredSegments <<"\n";
  
    
   
