@@ -33,6 +33,9 @@ Version History
  | v01-02  |
   ---------
   
+      - Changed order of hits in segments to start with innermost layer at [0]
+      - Added somed info methods for better debugging
+      - Prevent different criteria (all with self calculated angles) from rounding errors
       - Automaton: Added a counter of the connections between the segments
       - Changed order of hits in segments to start with innermost layer at [0]
       - Added somed info methods for better debugging
