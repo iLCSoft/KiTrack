@@ -6,7 +6,7 @@
 
 namespace KiTrack{
    
-   /** Criterion: forbids zig zagging: measure the angles in the xy plane, transpose them to the rane from -pi to pi
+   /** Criterion: forbids zig zagging: measure the angles in the xy plane, transpose them to the range from -pi to pi
     * and multiply: if there is a zigzag, the sign of the angle switches and the product of both angles becomes
     * negative.
     */
@@ -17,7 +17,9 @@ namespace KiTrack{
    public:
       
       /**
-       * @param prodMin the minimum product of the two angles in the range from -180° to 180° TODO: explain better
+       * @param prodMin the minimum product of the two angles in degrees
+       * 
+       * @param prodMax the maxinum product of the two angles in degrees
        */
       Crit4_NoZigZag ( float prodMin , float prodMax );
       

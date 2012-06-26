@@ -42,7 +42,7 @@ namespace KiTrack{
     * 
     * For example bundles the includes.
     * 
-    * Author: Robin Glattauer
+    * Author: Robin Glattauer, HEPHY
     */   
    class Criteria {
       

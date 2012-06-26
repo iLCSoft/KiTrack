@@ -6,7 +6,7 @@
 
 namespace KiTrack{
    
-   /** Criterion: check for the change of Phi / Z. (Phi = angle in the circle between two hits)
+   /** Criterion: check for the change of \f$ \frac{\phi}{Z} \f$. (\f$ \phi \f$ = angle in the circle formed by the hits)
     */
    class Crit4_PhiZRatioChange : public ICriterion{
       

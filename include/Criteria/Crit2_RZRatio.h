@@ -6,8 +6,8 @@
 
 namespace KiTrack{
 
-   /** Cirterion: distance of two hits divided by their z-distance.
-    * \f[ \frac{\Delta z}{\sqrt{ \Delta x^2 + \Delta y^2 + \Delta z^2 } }\f]
+   /** Criterion: distance of two hits divided by their z-distance.
+    * \f[ \frac{\sqrt{ \Delta x^2 + \Delta y^2 + \Delta z^2 }}{\left| \Delta z \right|}\f]
     */
    class Crit2_RZRatio : public ICriterion{
 

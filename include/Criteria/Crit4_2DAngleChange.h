@@ -6,7 +6,7 @@
 
 namespace KiTrack{
    
-   /** Criterion: change of the angle between segments in the xy plane
+   /** Criterion: change of the angle (in the xy plane) between segments in the xy plane
     */
    class Crit4_2DAngleChange : public ICriterion{
       

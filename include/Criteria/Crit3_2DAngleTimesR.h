@@ -6,7 +6,7 @@
 
 namespace KiTrack{
 
-   /** Criterion: the angle between two 2-segments multiplied by the radius of the circle they form
+   /** Criterion: the angle in the xy plane between two 2-segments multiplied by the radius of the circle they form
     */
    class Crit3_2DAngleTimesR : public ICriterion{
 

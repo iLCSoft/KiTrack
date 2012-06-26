@@ -6,7 +6,7 @@
 
 namespace KiTrack{
 
-   /** Criterion: for straight tracks, if line between two hits points towards IP.
+   /** Criterion: for straight tracks: if the line between the two hits points towards IP.
     * Calculated is
     * 
     * \f[ \frac{ \frac{\rho_1}{z_1} }{ \frac{\rho_2}{z_2} } \simeq 1 \f]

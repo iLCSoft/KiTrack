@@ -6,7 +6,7 @@
 
 namespace KiTrack{
    
-   /** Criterion: the change of the ratio of the distance of two hits to the z distance
+   /** Criterion: the change of the ratio of the distance of two hits over the z distance
     */
    class Crit3_ChangeRZRatio : public ICriterion{
       
