@@ -28,7 +28,9 @@ Version History
   -----------------------------
  | changes since last version  |
   -----------------------------
-
+      
+      - Added validity check of parameters in the HopfielNeuralNet
+      
   ---------
  | v01-02  |
   ---------

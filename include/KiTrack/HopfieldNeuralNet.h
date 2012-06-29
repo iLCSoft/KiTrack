@@ -4,14 +4,16 @@
  
 #include <vector>
 
+#include "KiTrackExceptions.h"
 
 namespace KiTrack{
 
    /**
-    * Represents a hopfield neuronal network
-    * (see <a href="../SubsetHopfieldNN.pdf">this</a> for more info).
+    * Represents a Hopfield Neural Network
     * 
-    * Author: Robin Glattauer
+    * See <a href="../SubsetHopfieldNN.pdf">this</a> for detailed info.
+    * 
+    * Author: Robin Glattauer, HEPHY
     */
    class HopfieldNeuralNet {
 
@@ -19,17 +21,20 @@ namespace KiTrack{
       public:
          
          /**
-         * @param G a matrix of the correlations. True means two neurons are incompatible. False means, they are
-         * compatible. (the diagonal elements are 0 by definition) 
+         * @param G A matrix of the correlations between the neurons. 
+         * True means two neurons are incompatible. False means, they are
+         * compatible. (the diagonal elements are 0 by definition and any entry there will be ignored and set to 0) 
          * 
-         * @param QI a vector containing the qualtity indicators of the neurons (i.e. their power to amplify or
-         * weaken other neurons)
+         * @param QI A vector containing the qualtity indicators of the neurons (i.e. their power to amplify or
+         * weaken other neurons). Quality should be indicated by a value between 0 and 1. 1 being the highest quality.
          * 
-         * @param states the states of the neurons. Should be between 0 and 1. TODO: check this, or use different method
+         * @param states The states of the neurons. Should be between 0 and 1.
          * 
-         * @param omega controls the influence of the quality indicator on the  activation of the neuron
+         * @param omega Controls the influence of the quality indicator on the  activation of the neuron. Needs to be
+         * between 0 and 1. 0 means, no influence from the quality of the neurons -> system tends to biggest compatible 
+         * set. 1 means highest influence from the quality of the neurons -> the highest quality neurons tend to win.
          */
-         HopfieldNeuralNet( std::vector < std::vector <bool> > G , std::vector < double > QI , std::vector < double > states , double omega);
+         HopfieldNeuralNet( std::vector < std::vector <bool> > G , std::vector < double > QI , std::vector < double > states , double omega) throw( InvalidParameter );
                
                
          /** Does one iteration of the neuronal network.
@@ -38,24 +43,25 @@ namespace KiTrack{
          * 
          * \f$ \vec{state}_{new} = activationFunction(\vec{y}) \f$
          * 
-         * @return Whether the neuronal network is considered as stable
+         * @return Whether the Neural Network is considered as stable
          */
          bool doIteration();      
             
          /**
-         * sets the temperature of the Neural Network
+         * Sets the temperature of the Neural Network (The HNN is cooled down in every iteration)
          */
          void setT    (double T)    { _T = T;};
          
          /**
          * Sets the temperature at infinity. The temperature will converge to this
-         * value.
+         * value after infinite iterations.
          */
          void setTInf (double TInf) {_TInf = TInf;};
          
          /**
-         * Sets the value that changes of the states of the neurons must exceed in order to be counted as
-         * "changed". When no state of a neuron changes more than this value, the Network is considered as stable.
+         * Set the threshhold value below which the HNN is seen as "stable". As long as any Neuron changes its state 
+         * by a value bigger than this, the HNN is not considered stable. When all Neurons change their states so little,
+         * that none of the changes exceeds this threshold, then the HNN is stable.
          */
          void setLimitForStable (double limit) { _limitForStable = limit; };
          
@@ -73,7 +79,7 @@ namespace KiTrack{
          /** the matrix of the weights*/
          std::vector < std::vector <double> > _W;
          
-         /** state describing how active a neuron is*/
+         /** states describing how active a neuron is*/
          std::vector < double > _States;
          
          
@@ -91,7 +97,7 @@ namespace KiTrack{
          */
          bool _isStable;   
 
-         /** The upper limit for change of a neuron if it should be considered stabel.*/
+         /** The upper limit for change of a neuron, if it should be considered stabel.*/
          double _limitForStable;
          
          /** Omega controls the influence of the quality indicator on the activation of the neuron.
@@ -108,7 +114,7 @@ namespace KiTrack{
          * 
          * @param state the state
          * @param T the temperature
-         * @return the actication function corresponding to the input values: g(x) = 1/2* (1 + tanh( x/T ))
+         * @return the activation function corresponding to the input values: g(x) = 1/2* (1 + tanh( x/T ))
          */
          double activationFunction ( double state , double T );
 

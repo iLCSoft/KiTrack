@@ -9,7 +9,11 @@ namespace KiTrack {
  
    /** A base class for subsets.
     * 
-    * Covers only the basics like adding elements.
+    * The idea behind the subset classes is, that one has a collection of elements, but not all elements are compatible
+    * with each other. One wants to find a subset of these elements, where all are compatible. Also the subset should have
+    * a high quality. 
+    * Details about this can be found in the derived classes. For technical reasons (templates and virtual methods) 
+    * this class only covers the basics.
     */
    template <class T>
    class Subset{
@@ -43,7 +47,7 @@ namespace KiTrack {
       
       
    };
-     
+   
    
    
    

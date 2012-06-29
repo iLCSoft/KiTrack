@@ -24,9 +24,13 @@ namespace KiTrack{
       /** Fits the track. */
       virtual void fit() = 0;
       
-      
+      /** @return the degrees of freedom of the fit. This must only be called after fit() has been used */
       virtual double getNdf() const = 0;
+      
+      /** @return the chi squared value of the fit. This must only be called after fit() has been used */
       virtual double getChi2() const = 0;
+      
+      /** @return the chi squared probability of the fit. This must only be called after fit() has been used */
       virtual double getChi2Prob() const = 0;
       
       virtual ~ITrack(){}

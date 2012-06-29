@@ -4,7 +4,7 @@
 #include <string>
 #include <exception> 
 
-//Exceptions for the KiTrackNamespace
+//Exceptions for the KiTrack namespace
 
 namespace KiTrack {
 

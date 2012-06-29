@@ -10,43 +10,71 @@
 namespace KiTrack{
    
    
-   /** The class for the cellular automaton.
+   /** A class for the cellular automaton.
     * 
-    * It stores segments ( a number of hits, see the segment header file ) on layers
+    * For detailed info on the Cellular Automaton and its use for track reconstruction see 
+    * <a href="../CellularAutomaton.pdf">Introduction to the Cellular Automaton</a>
     * 
-    * Via the method doAutomaton() it raises the states of the segments, if they have are connected to an inner
-    * segment with the same state which satisfies all criteria. <br>
-    * Criteria are passed to this class via the addCriterion() method. A criterion is an object that takes
-    * two segments and tells, if they are compatible.
-    * For more detailed information see the interface: ICriterion and the different classes derived from it
-    * (they all start with Crit )
+    * <h3>About the class </h3>
     * 
-    * The raising of the states will be repeated until no more changes happen. 
+    * This Cellular Automaton is specifically designed for track reconstruction, so it differs in the functionality
+    * from other Cellular Automata, like those used for simulation of biological cells.
     * 
-    * After this the cleanBadStates method can be used to erase all segments, that have a state lower than their layer,
-    * which essentially means, that they are not connected all the way through to layer 0.
+    * The basic information on how the CA works and what it needs is describet in the pdf above. Here I'll only sum up
+    * the basics of this class.
     * 
-    * After this the method cleanBadConnections() can be used, to get rid of all connections of segments, that don't fulfill
-    * the currently loaded criteria. TODO: this is not really needed in the current version
+    * The cells the Cellular Automaton deals with are here called segments as we deal with track reconstruction.
+    * These are the main information entities the CA deals with and therefore the most important member variable is 
+    * a container of these segments. (For more details on the segments see the doxygen of the Segment class)
+    * To sum it up: Segments consist of hits. So they are a bit like tracks. Or if they only consist of one single hit
+    * (so called 1-hit-segments) then they are like hits. 
+    * But there a few features that distinguish them from hits or tracks
+    *   - They can have parents and children. These are simply segments on top or below them. The idea is, that all
+    * segments on the inside are stored as children if they could belong to the same track. And the same for all segments
+    * on the outside possible belonging to the same track (the parents). So if we start at a segment and go to a child
+    * and on to a grandchild and so on, we follow a possible track. If we erase those connections we decrease the number
+    * of possible tracks.
+    *   - Segments must have a layer marking where it is. (layer 0: inside, higher layers further outside). This is a
+    * feature needed by the Automaton. Because it is an algorithm with discrete entities, we need some sort of discrete 
+    * ordering. (If we for example had a Cellular Automaton for simulation of 2 dimensional cells and we arranged the 
+    * cells for example on a chessboard, we always know the next cells. Here we have a 1 dimensional situation so we use
+    * layers)
+    *   - Segments have states: this is simply an integer number (an unsigned to be more precise). It is needed by the 
+    * Automaton to find connections that go all the way through (see pdf!)
+    *
+    * The Segments can be added via the addSegment() method and are stored layerwise.
     * 
+    * Once the Segments are all stored in the Cellular Automaton it can perform.
+    * Via the method doAutomaton() it raises the states of the Segments until no change happens anymore.
+    * When this is done Segments not connected all the way through can be discarded by the method 
+    * cleanBadStates(). This reduces the number of possible tracks.
     * 
-    * If another round of doAutomaton() wants to be used, you should first call the method resetStates, to set all states of
-    * the segments back to 0.
+    * To get an initial Cellular Automaton to start with, the class SegmentBuilder can be used.
+    * (It takes hits builds segments from them and establishes the first parent-child relations)
     * 
+    * In order to sort out even more it is possible to go to longer segments. So instead of checking 1-hit-segments,
+    * we can have a look at 2-hit-segments or 3-hit-segments. (And sort out much more along the way)
+    * For this the method lengthenSegments() is used. It combines connected segments and creates segments from them,
+    * that are exactly one hit longer. And then it is again time for connecting them.
+    * (I distinguish here between connecting: "storing the link" and combining: "making 1 new segment out of two others")
     * 
-    * The method lengthenSegments is used to make the segments 1 hit longer. So if you have 2-segments 
-    * (segments consisting of 2 hits) and performed the automaton on it and now want to proceed with longer 3-segments
-    * (segments consiting of 3 hits) you would call the lengthenSegments() method.
+    * When segments are connected only connections that make sense are made. This is really important! If we don't make
+    * assumptions here, what Segments could belong together (i.e. could form a sensible track) we get lost in combinatorics.
+    * For this the so called Criteria are used. Via the method addCriterion() (or addCriteria() ) they can be added
+    * to the Cellular Automaton. All a Criterion does (see the Criterion doxygen for more info) is to say whether two
+    * Segments would give a good match. These criteria can be anything that makes sense in distinguishing between 
+    * real tracks and combinatorial background. For example if the segments are already long enough (already little tracks)
+    * one can compare the radius of their helices or the angle under which they meet and so on. 
     * 
-    * After this don't forget, that the criteria you loaded before were for 2-segments, so you should erase them with
-    * clearCriteria() and then add criteria for 3-segments.
+    * Once we have longer segments we can again use the doAutomaton() method and then cleanBadStates(). Then we lenghten
+    * them once more and so on.
     * 
-    * 
-    * Once you are done with all this, you might want to get back all the possible tracks stored in the automaton.
-    * For this use the getTracks() method. It will return all tracks that are possible given the current stored
-    * segments and their connections.
-    * But be warned: when there are still a lot of hits and connections, there will be a high number of possible tracks,
-    * therefore taking some time.
+    * Between two such runs, one should of course clear the old Criteria with clearCriteria and reset the states of the
+    * Segments with resetStates().
+    *
+    * That's it. In the end, when nothing more is to be done in the Cellular Automaton, we need to extract the track
+    * candidates, it found. This is done via the getTracks() method. 
+    *
     */ 
    class Automaton{
       
@@ -86,7 +114,7 @@ namespace KiTrack{
        * In one iteration all segments are checked, if they have a neighbor.
        * A neighbor:
        * - has the same state
-       * - fulfills all the criteria
+       * - fulfills all the criteria (this is automatically provided, because in lengthenSegments only connections that fullfill the Criteria are made)
        * 
        * If it has a neighbor its state will be raised by one at the end of the iteration.
        * (At the end only in theory: in the program it will be during the iteration, but

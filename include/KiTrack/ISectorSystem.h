@@ -10,7 +10,8 @@ namespace KiTrack{
    
    /** An interface for Sector Systems. 
     * 
-    * A sector is a code for a place. So it can for example equal a sensor somewhere in a detector
+    * A sector is a code for a place. So it can for example equal a sensor somewhere in a detector or be something
+    * abstract like the IP.
     * 
     * A sector system is able to take a sector (integer number) and give back information
     * about it. This can be things like the number of the sensor or the rough distance from the IP or such
