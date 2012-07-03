@@ -192,7 +192,7 @@ std::vector< Artist > artistsToStayAtHome = subset.getRejected();
          
          
          // Fill the states in the G matrix. (whether two elements are compatible or not
-         for ( unsigned j=i+1; j < nElements ; j++ ){ // over all elements that come after the current one (TODO: explain, why not previous ones too)
+         for ( unsigned j=i+1; j < nElements ; j++ ){ // over all elements that come after the current one (the elements before get filled automatically because of symmetry)
             
             T elementB = elements[j]; // the track we check if it is in conflict with trackA
             

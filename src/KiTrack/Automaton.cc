@@ -81,7 +81,7 @@ void Automaton::lengthenSegments(){
    //   ( 2 - 0 - 1 = 1 --> segment->setSkippedLayers( 1 );
 
 
-   streamlog_out(DEBUG2) << "Next combining the shorter segments to longer ones\n";
+   streamlog_out(DEBUG2) << "Combining the shorter segments to longer ones\n";
 
    //----------------------------------------------------------------------------------------------//
    //                                                                                              //
@@ -103,66 +103,102 @@ void Automaton::lengthenSegments(){
    unsigned nLongerSegments=0;
    unsigned nShorterSegments= _segments[0].size();
 
-   for (unsigned layer = 1; layer < _segments.size(); layer++){ //over all layer where there still can be something below
-
+   for (unsigned layer = 1; layer < _segments.size(); layer++){ //over all layers where there still can be something below
+      
+      
       std::list<Segment*> segments = _segments[layer];
-
+      
       for ( std::list<Segment*>::iterator iSeg=segments.begin(); iSeg != segments.end(); iSeg++){ //over all segments in this layer
-
+         
+         
          nShorterSegments++;
-
+         
          Segment* parent = *iSeg;
-
+         
          std::list <Segment*> children = parent->getChildren();
-
+         
          for ( std::list<Segment*>::iterator iChild=children.begin(); iChild !=children.end(); iChild++){ //over all children of this parent
-
+            
             Segment* child = *iChild;
-
+            
             //Combine the parent and the child to form a new longer segment
-
+            
             //take all the hits from the parent
             std::vector < IHit* > hits = parent->getHits();
-
+            
             //and also add the inner hit from the child
             hits.insert( hits.begin(), child->getHits().at(0) );
-
+            
             //make the new (longer) segment
             Segment* newSegment = new Segment ( hits );
             nLongerSegments++;
-
+            
             //set the layer to the layer of the childsegment
             unsigned newLayer = child->getLayer();
             newSegment->setLayer ( newLayer );
-
+            
             // Set the skipped layers.                  For an explanation see Info A above
             int skippedLayers = parent->getLayer() - child->getLayer() - 1;
             if( skippedLayers < 0 ) throw InvalidParameter( "skippedLayers can't be < 0!" );
             newSegment->setSkippedLayers( unsigned(skippedLayers) );      //
-
+            
             streamlog_out( DEBUG1 ) << "Created longer segment: " << parent->getHits().size()
                                     << "hits -->" << newSegment->getHits().size()
                                     << " hits, layer = " << newLayer
                                     << ", skipped layers = " << skippedLayers <<"\n";
             streamlog_out( DEBUG1 ) << "Combined: " << child->getInfo() << "<--with-->" << parent->getInfo() << "\n";
-
-
-            //Erase the connection from the child to the parent segment and replace it with a link to the new
-            //(longer) segment. ( and vice versa ) This way we can connect the longer segments easily after.
+            
+            
+            // In a next step we want to again establish the conenctions between the longer segments (so we can do the 
+            // Automaton and later combine them and then do it all again... ).
+            // If we just created the Segments and dumped the old ones, we would have no idea what of the new, longer
+            // Segments we can connect.
+            // We could add some other container to store the possible connections of the longer Segments, but maybe
+            // it's the easiest approach to use, what is already there: the shorter Segments.
+            //
+            // So when we combine two shorter segments, we store the new longer Segment as a parent or child.
+            // Child, when the longer Segment goes on towards the inside, Parent if it continues on to the outside.
+            // So the shorter Segments kind of act as joints, that hold the longer Segments together.
+            //
+            // Let's visulaize that, so that it makes more sense:
+            // Let's have a look at 3 2-hit segments:
+            //
+            //          /       2-hit-Segment A
+            //          \       2-hit-Segment B
+            //          /       2-hit-Segment C
+            //
+            // Obviously we can make 2 3-hit segments out of this:
+            //
+            //          / -->   /       3-hit-Segment D
+            //          \       \  \    .
+            //          / -->      /    3-hit-Segment E
+            // 
+            // In the 2-hit-Segment B we store the 3-hit-Segments D and E as parent and child (while deleting A and C
+            // as parent and child, because that is now not needed anymore )
+            //
+            // So when we want to connect the 3-hit-Segments, all we have to do is iterate over all 2-hit-Segments which
+            // then only have 3-hit-Segments as parents and children.
+            // When we come to Segment B, we see that D is a parent and E is a child, thus we connect them. Or to be more
+            // precise, we connect them, if the criteria do say so.
+            //
+            // So, yes B acts like a joint connecting D and E
+            // 
+            // Erase the connection from the child to the parent segment and replace it with a link to the new
+            // (longer) segment. ( and vice versa ) This way we can connect the longer segments easily after.
             child->deleteParent( parent );
             child->addParent ( newSegment );
             parent->deleteChild ( child );
             parent->addChild ( newSegment );
-            //So now the new longer segment is a child of the old parent and a parent of the childsegment.
-            //TODO: really explain this better
-
-            //Save the new segment in the new vector[][]
+            // So now the new longer segment is a child of the old parent and a parent of the childsegment.
+           
+            
+            // Save the new segment in the new vector[][]
             longerSegments[newLayer].push_back( newSegment );
-
+            
          }
-
+         
       }
-
+      
    }
 
    streamlog_out(DEBUG4) << " Made " << nLongerSegments << " longer segments from " << nShorterSegments << " shorter segments.\n";
@@ -219,7 +255,7 @@ void Automaton::lengthenSegments(){
                      areCompatible = false;
                      theFailedCrit = _criteria[iCrit];
                      break;
-                  
+                     
                   }
                   
                }
@@ -241,17 +277,17 @@ void Automaton::lengthenSegments(){
                   if( theFailedCrit != NULL ) streamlog_out( DEBUG0 ) << "Failed first at criterion: " << theFailedCrit->getName() << "\n";
                   
                }
-
+               
                
                nPossibleConnections++;
-
+               
             }
-
+            
          }
          
          
       }
-
+      
    }
    _nConnections = nConnections;
 
