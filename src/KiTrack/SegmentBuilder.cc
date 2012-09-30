@@ -112,14 +112,38 @@ Automaton SegmentBuilder::get1SegAutomaton(){
                
                
                Segment* child = targetSegments[j];
+               bool areCompatible = true;
+               ICriterion* theFailedCrit = NULL; 
                
-               if ( connectSegments( parent , child ) ){ //the connection was successful 
+               
+               for (unsigned int iCrit = 0; iCrit < _criteria.size(); iCrit++){
                   
+                  if ( _criteria[iCrit]->areCompatible( parent , child ) == false ){
+                     
+                     areCompatible = false;
+                     theFailedCrit = _criteria[iCrit];
+                     break;
+                  }
+                  
+               }
+               
+               
+               if ( areCompatible ){ //the connection was successful 
+                  
+                  parent->addChild( child );
+                  child->addParent( parent );
                   
                   nConnections++;              
                   streamlog_out( DEBUG1 ) << "Connected: " << child->getInfo() << "<--with-->" << parent->getInfo() << "\n"; 
                   
-               }                                    
+               } 
+               else{
+                  
+                  streamlog_out( DEBUG1 ) << "NOT Connected: " << child->getInfo() << "<--XXXX-->" << parent->getInfo() << "\n";
+                  if( theFailedCrit != NULL ) streamlog_out( DEBUG1 ) << "Failed first at criterion: " << theFailedCrit->getName() << "\n";
+                  
+               }
+               
                
             }
             
@@ -153,39 +177,6 @@ Automaton SegmentBuilder::get1SegAutomaton(){
 
 
 
-
-
-bool SegmentBuilder::connectSegments ( Segment* parent , Segment* child ){
-
-
-   //Check all the criteria:
-   bool areCompatible = true;
-
-   for (unsigned int iCrit = 0; iCrit < _criteria.size(); iCrit++){
-      
-      if ( _criteria[iCrit]->areCompatible( parent , child ) == false ){
-         
-         areCompatible = false;
-         break;
-      }
-      
-   }
-
-
-   if ( areCompatible ) {
-      
-      
-      parent->addChild( child );
-      child->addParent( parent );
-      
-      return true;
-      
-   }
-   
-   
-   return false;
-
-}
 
 
 

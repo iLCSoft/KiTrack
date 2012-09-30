@@ -73,11 +73,6 @@ namespace KiTrack{
       
       std::map< int , std::vector< IHit* > > _map_sector_hits;
       
-      /** Connects two segments, if they fulfill all the criteria
-       * 
-       * @return whether they were connected
-       */
-      bool connectSegments ( Segment* parent , Segment* child );
       
       
       

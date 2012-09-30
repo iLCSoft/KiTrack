@@ -108,7 +108,7 @@ std::vector< Artist > artistsToStayAtHome = subset.getRejected();
          _limitForStable = 0.01;
          _initStateMin = 0.;
          _initStateMax = 0.1;
-         _activationThreshold = 0.75;
+         _activationThreshold = 0.5;
          
       }
       
