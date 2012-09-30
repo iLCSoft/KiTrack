@@ -24,6 +24,13 @@
 Version History
 =============================================================================================================
  
+ 
+ ---------
+ | v01-04  |
+ ---------
+ 
+      - SegmentBuilder: added output of failed criterion
+      - SubsetHopfieldNN: set the activation threshold down to 0.5
 
   ---------
  | v01-03  |
