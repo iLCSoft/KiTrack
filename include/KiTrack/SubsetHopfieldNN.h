@@ -233,6 +233,27 @@ std::vector< Artist > artistsToStayAtHome = subset.getRejected();
          }
         
       }
+      // output, where one sees, what elements are  incompatible with what others:
+      if( !G.empty() ){
+         
+         streamlog_out(DEBUG2) << "Incompatible ones:\n";
+         
+         
+         for ( unsigned i=0; i < G.size(); i++ ){
+            
+            streamlog_out(DEBUG2) << "Element " << i << ":\t";
+            
+            for ( unsigned j=0; j < G[i].size(); j++ ){
+               
+               if( G[i][j] ) streamlog_out(DEBUG2) << j << ", ";
+               
+            }
+            
+            streamlog_out(DEBUG2) << "\n";
+            
+         }
+         
+      }
       
       
       /**********************************************************************************************/
