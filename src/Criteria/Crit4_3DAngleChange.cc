@@ -60,8 +60,8 @@ bool Crit4_3DAngleChange::areCompatible( Segment* parent , Segment* child )throw
   
       
       
-      double angleXY1 = outerVec.Angle( middleVec.Phi() ); 
-      double angleXY2 = middleVec.Angle( innerVec.Phi() );
+      double angleXY1 = outerVec.Angle( middleVec ); 
+      double angleXY2 = middleVec.Angle( innerVec );
       
       angleXY1 -= 2*M_PI*floor( angleXY1 /2. /M_PI );    //to the range from 0 to 2pi 
       if (angleXY1 > M_PI) angleXY1 -= 2*M_PI;           //to the range from -pi to pi
