@@ -161,14 +161,14 @@ namespace KiTrack{
        * that have less won't be considered as tracks and won't be returned.
        * 
        */
-      std::vector < std::vector< IHit* > > getTracks( unsigned minHits = 3 );
-      
+      //std::vector < std::vector< IHit* > > getTracks( unsigned minHits = 3 );
+      std::vector < std::vector< IHit* > > getTracks( unsigned minHits = 2 ); // YV, 2 mini-vector hits can form a track     
       
       /**Returns all the tracks starting from this segment.
        * It is a recursive method and gets invoked by getTracks.
        */
-      std::vector < std::vector< IHit* > > getTracksOfSegment ( Segment* segment, std::vector< IHit* > hits , unsigned minHits = 3 );
-      
+      //std::vector < std::vector< IHit* > > getTracksOfSegment ( Segment* segment, std::vector< IHit* > hits , unsigned minHits = 3 );
+      std::vector < std::vector< IHit* > > getTracksOfSegment ( Segment* segment, std::vector< IHit* > hits , unsigned minHits = 2 );    // YV, 2 mini-vector hits can form a track   
       
       /**
        * @return All the segments currently saved in the automaton

@@ -18,8 +18,8 @@ namespace KiTrack{
       
       
    public:
-      
-      /** @return the x position */
+
+       /** @return the x position */
       float getX() const { return _x; }
       
       /** @return the y position */
@@ -46,6 +46,15 @@ namespace KiTrack{
       
       /** @return a string containing the position of the hit */
       std::string getPositionInfo();
+
+      /** to be used with mini-vectors: @return 3D angle */  //YV
+      double get3DAngle( IHit* otherHit) const { return _3DAngle ; }
+
+      /** to be used with mini-vectors: @return azimuth angle */  //YV
+      double getPhi() const { return _phiMV ; } 
+
+      /** to be used with mini-vectors: @return polar angle */  //YV
+      double getTheta() const { return _thetaMV ; } 
       
       virtual ~IHit(){}
       
@@ -55,6 +64,10 @@ namespace KiTrack{
       float _x;
       float _y;
       float _z;
+
+      double _3DAngle;  //YV
+      double _phiMV;     //YV
+      double _thetaMV;     //YV
       
       int _sector;
       

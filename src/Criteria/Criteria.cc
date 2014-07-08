@@ -31,7 +31,12 @@ std::set< std::string > Criteria::getAllCriteriaNames(){
    critNames.insert( "Crit4_DistOfCircleCenters" );
    critNames.insert( "Crit4_NoZigZag" );
    critNames.insert( "Crit4_RChange" );
-  
+
+   // MiniVector based Cellular Automaton for VXD
+
+   critNames.insert( "Crit2_DeltaPhi_MV" ); 
+   critNames.insert( "Crit2_DeltaTheta_MV" ); 
+   critNames.insert( "Crit3_NoZigZag_MV" );
 
    return critNames;
 
@@ -137,8 +142,14 @@ ICriterion* Criteria::createCriterion( std::string critName, float min , float m
    else if ( critName == "Crit4_NoZigZag" ) return ( new Crit4_NoZigZag( min , max ) );
    
    else if ( critName == "Crit4_RChange" ) return ( new Crit4_RChange( min , max ) );
-   
-   
+
+   // Mini-Vector based
+
+   else if ( critName == "Crit2_DeltaPhi_MV" ) return ( new Crit2_DeltaPhi_MV( min , max ) );
+
+   else if ( critName == "Crit2_DeltaTheta_MV" ) return ( new Crit2_DeltaTheta_MV( min , max ) );
+
+   else if ( critName == "Crit3_NoZigZag_MV" ) return ( new Crit3_NoZigZag_MV( min , max ) );
    
    else {
       

@@ -671,7 +671,7 @@ std::vector < std::vector< IHit* > > Automaton::getTracks( unsigned minHits ){
          
          Segment* segment = *iSeg;
          
-         if ( segment->getParents().empty() ){ // if it has no parents it is the end of a possible track
+         //if ( segment->getParents().empty() ){ // if it has no parents it is the end of a possible track
             
             
             // get the tracks from the segment
@@ -681,7 +681,7 @@ std::vector < std::vector< IHit* > > Automaton::getTracks( unsigned minHits ){
             tracks.insert( tracks.end() , newTracks.begin() , newTracks.end() );
             
             
-         }
+	    //}
          
       }
       
