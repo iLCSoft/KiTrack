@@ -26,6 +26,14 @@ Version History
  
  
  ---------
+| v01-05   |
+ ---------
+
+      - Use the KiTrack core tools for standalone tracking at VXD based on mini - vectors
+      - Importing a first set of criteria for VXD tracking
+      - Extending IHit interface to accomodate mini - vectors
+
+ ---------
  | v01-04  |
  ---------
  
