@@ -37,6 +37,7 @@ std::set< std::string > Criteria::getAllCriteriaNames(){
    critNames.insert( "Crit2_DeltaPhi_MV" ); 
    critNames.insert( "Crit2_DeltaTheta_MV" ); 
    critNames.insert( "Crit3_NoZigZag_MV" );
+   critNames.insert( "Crit3_PT_MV" );
 
    return critNames;
 
@@ -150,6 +151,8 @@ ICriterion* Criteria::createCriterion( std::string critName, float min , float m
    else if ( critName == "Crit2_DeltaTheta_MV" ) return ( new Crit2_DeltaTheta_MV( min , max ) );
 
    else if ( critName == "Crit3_NoZigZag_MV" ) return ( new Crit3_NoZigZag_MV( min , max ) );
+
+   else if ( critName == "Crit3_PT_MV" ) return ( new Crit3_PT_MV( min , max ) );
    
    else {
       

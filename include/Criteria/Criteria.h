@@ -32,6 +32,7 @@
 #include "Criteria/Crit2_DeltaPhi_MV.h"
 #include "Criteria/Crit2_DeltaTheta_MV.h"
 #include "Criteria/Crit3_NoZigZag_MV.h"
+#include "Criteria/Crit3_PT_MV.h"
 
 
 #include <vector>
