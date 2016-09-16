@@ -30,6 +30,7 @@
 
 // Criteria for Mini - Vector based Cellular Automaton for VXD
 #include "Criteria/Crit2_DeltaPhi_MV.h"
+#include "Criteria/Crit2_Distance_MV.h"
 #include "Criteria/Crit2_DeltaTheta_MV.h"
 #include "Criteria/Crit3_NoZigZag_MV.h"
 #include "Criteria/Crit3_PT_MV.h"

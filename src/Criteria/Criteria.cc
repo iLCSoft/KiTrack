@@ -34,7 +34,8 @@ std::set< std::string > Criteria::getAllCriteriaNames(){
 
    // MiniVector based Cellular Automaton for VXD
 
-   critNames.insert( "Crit2_DeltaPhi_MV" ); 
+   critNames.insert( "Crit2_DeltaPhi_MV" );
+   critNames.insert( "Crit2_Distance_MV" );
    critNames.insert( "Crit2_DeltaTheta_MV" ); 
    critNames.insert( "Crit3_NoZigZag_MV" );
    critNames.insert( "Crit3_PT_MV" );
@@ -147,6 +148,8 @@ ICriterion* Criteria::createCriterion( std::string critName, float min , float m
    // Mini-Vector based
 
    else if ( critName == "Crit2_DeltaPhi_MV" ) return ( new Crit2_DeltaPhi_MV( min , max ) );
+
+   else if ( critName == "Crit2_Distance_MV" ) return ( new Crit2_Distance_MV( min , max ) );
 
    else if ( critName == "Crit2_DeltaTheta_MV" ) return ( new Crit2_DeltaTheta_MV( min , max ) );
 

@@ -55,7 +55,7 @@ namespace KiTrack{
 
       /** to be used with mini-vectors: @return polar angle */  //YV
       double getTheta() const { return _thetaMV ; } 
-      
+
       virtual ~IHit(){}
       
    protected:
