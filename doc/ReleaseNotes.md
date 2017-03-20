@@ -4,7 +4,7 @@ F. Gaede
 * made compatible with c++11
 * removed -ansi -pedantic -Wno-long-long
 
-#v01-06
+# v01-06
 * Crit3_PT_MV: adding criterio for minimum PT to mini-vector tracking (Y.Voutsinas)
 
 * v01-05
