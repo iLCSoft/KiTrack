@@ -1,5 +1,6 @@
 # KiTrack
 [![Build Status](https://travis-ci.org/iLCSoft/KiTrack.svg?branch=master)](https://travis-ci.org/iLCSoft/KiTrack)
+[![Coverity Scan Build Status](https://scan.coverity.com/projects/12355/badge.svg)](https://scan.coverity.com/projects/ilcsoft-kitrack)
 
 Toolkit for Tracking. Consists of KiTrack (Cellular Automaton, a Hopfield Neural Network, the hit
 and track classes) and Criteria (the criteria classes).
