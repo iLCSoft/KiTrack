@@ -17,7 +17,7 @@ namespace KiTrack {
 
     
   protected:
-    std::string message ;
+    std::string message{} ;
     
     KiTrackException(){  /*no_op*/ ; } 
     

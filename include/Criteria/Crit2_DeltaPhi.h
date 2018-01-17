@@ -25,8 +25,8 @@ namespace KiTrack{
     
    private:
       
-      float _deltaPhiMax;
-      float _deltaPhiMin;
+      float _deltaPhiMax{};
+      float _deltaPhiMin{};
       
       
       

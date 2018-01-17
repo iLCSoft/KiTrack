@@ -25,8 +25,8 @@ namespace KiTrack{
       
    private:
       
-      float _distMax;
-      float _distMin;
+      float _distMax{};
+      float _distMin{};
       
    };
    

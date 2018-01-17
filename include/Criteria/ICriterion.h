@@ -49,12 +49,12 @@ namespace KiTrack{
    protected:
       
       
-      std::map < std::string , float > _map_name_value;
+      std::map < std::string , float > _map_name_value{};
       
-      bool _saveValues;
+      bool _saveValues{};
       
-      std::string _name;
-      std::string _type;
+      std::string _name{};
+      std::string _type{};
       
    };
    

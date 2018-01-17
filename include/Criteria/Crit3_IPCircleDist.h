@@ -23,8 +23,8 @@ namespace KiTrack{
       
    private:
       
-      float _distToCircleMax;
-      float _distToCircleMin;
+      float _distToCircleMax{};
+      float _distToCircleMin{};
       
       
    };

@@ -23,8 +23,8 @@ namespace KiTrack{
     
    private:
       
-      float _deltaRhoMax;
-      float _deltaRhoMin;
+      float _deltaRhoMax{};
+      float _deltaRhoMin{};
       
       
       

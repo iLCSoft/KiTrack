@@ -25,8 +25,8 @@ namespace KiTrack{
     
    private:
       
-      float _cosAngleMin;
-      float _cosAngleMax;
+      float _cosAngleMin{};
+      float _cosAngleMax{};
       
    };
 

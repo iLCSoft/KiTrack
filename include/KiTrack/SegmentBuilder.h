@@ -68,10 +68,10 @@ namespace KiTrack{
    private:
       
       
-      std::vector <ICriterion* > _criteria;
-      std::vector <ISectorConnector* > _sectorConnectors;
+      std::vector <ICriterion* > _criteria{};
+      std::vector <ISectorConnector* > _sectorConnectors{};
       
-      std::map< int , std::vector< IHit* > > _map_sector_hits;
+      std::map< int , std::vector< IHit* > > _map_sector_hits{};
       
       
       

@@ -41,9 +41,9 @@ namespace KiTrack {
    
    protected:
       
-      std::vector< T > _elements;
-      std::vector< T > _acceptedElements;
-      std::vector< T > _rejectedElements;
+      std::vector< T > _elements{};
+      std::vector< T > _acceptedElements{};
+      std::vector< T > _rejectedElements{};
       
       
    };
