@@ -26,17 +26,17 @@ class SimpleCircle {
   private:
       
       
-      double _R;
-      double _centerX;
-      double _centerY;
+      double _R{};
+      double _centerX{};
+      double _centerY{};
       
-      double _x1;
-      double _x2;
-      double _x3;
+      double _x1{};
+      double _x2{};
+      double _x3{};
       
-      double _y1;
-      double _y2;
-      double _y3;
+      double _y1{};
+      double _y2{};
+      double _y3{};
 
 
 

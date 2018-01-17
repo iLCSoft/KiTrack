@@ -78,17 +78,17 @@ namespace KiTrack{
      
    private:
       
-      std::list <Segment*> _children; 
-      std::list <Segment*> _parents;
+      std::list <Segment*> _children{}; 
+      std::list <Segment*> _parents{};
       
       
       
-      std::vector <IHit*> _hits;
+      std::vector <IHit*> _hits{};
       
-      std::vector<int> _state;
+      std::vector<int> _state{};
       
-      unsigned _layer;
-      bool _active;
+      unsigned _layer{};
+      bool _active{};
       
    };
 

@@ -77,37 +77,37 @@ namespace KiTrack{
          
             
          /** the matrix of the weights*/
-         std::vector < std::vector <double> > _W;
+         std::vector < std::vector <double> > _W{};
          
          /** states describing how active a neuron is*/
-         std::vector < double > _States;
+         std::vector < double > _States{};
          
          
-         std::vector < double > _w0;
+         std::vector < double > _w0{};
          
          /** temperature */
-         double _T;
+         double _T{};
          
          /** temperature after infinite iterations */
-         double _TInf;
+         double _TInf{};
 
          /** indicates if the neuronal network is stable.
          * this is true when the change after one iteration 
          * of any neuron is not bigger than the value _limitForStable.
          */
-         bool _isStable;   
+         bool _isStable{};   
 
          /** The upper limit for change of a neuron, if it should be considered stabel.*/
-         double _limitForStable;
+         double _limitForStable{};
          
          /** Omega controls the influence of the quality indicator on the activation of the neuron.
          */
-         double _omega;
+         double _omega{};
 
          /** the order of the neurons to be updated. So it should of course reach from 0 to the number of neurons -1.
          * (4 , 2, 0  1, 3) will for example mean: update first the neuron 4, then the neuron 2, then 0 and so on
          */
-         std::vector <unsigned> _order;
+         std::vector <unsigned> _order{};
          
          
          /** Calculates the activation function

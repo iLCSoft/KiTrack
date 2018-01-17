@@ -42,7 +42,7 @@ namespace KiTrack{
    protected:
       
       
-      unsigned _nLayers;
+      unsigned _nLayers{};
       
       
       

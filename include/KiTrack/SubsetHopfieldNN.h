@@ -131,13 +131,13 @@ std::vector< Artist > artistsToStayAtHome = subset.getRejected();
    protected:
       
       
-      double _TStart;
-      double _TInf;
-      double _omega;
-      double _limitForStable;
-      double _initStateMin;
-      double _initStateMax;
-      double _activationThreshold;
+      double _TStart{};
+      double _TInf{};
+      double _omega{};
+      double _limitForStable{};
+      double _initStateMin{};
+      double _initStateMax{};
+      double _activationThreshold{};
       
    };
    

@@ -29,8 +29,8 @@ namespace KiTrack{
       
    private:
       
-      float _prodMin;
-      float _prodMax;
+      float _prodMin{};
+      float _prodMax{};
       
    };
    

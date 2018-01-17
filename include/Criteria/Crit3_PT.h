@@ -23,9 +23,9 @@ namespace KiTrack{
       
    private:
       
-      float _ptMin;
-      float _ptMax;
-      float _Bz;
+      float _ptMin{};
+      float _ptMax{};
+      float _Bz{};
       
       
    };

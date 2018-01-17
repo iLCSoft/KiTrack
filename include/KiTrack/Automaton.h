@@ -187,13 +187,13 @@ namespace KiTrack{
        * The segments will be deleted by the Automaton in the destructor
        * 
        */
-      std::vector < std::list < Segment* > > _segments;
+      std::vector < std::list < Segment* > > _segments{};
       
       /** A vector containing all the criteria, that are used in the Automaton
        */
-      std::vector < ICriterion* > _criteria;
+      std::vector < ICriterion* > _criteria{};
       
-      unsigned _nConnections;
+      unsigned _nConnections{};
       
       
       

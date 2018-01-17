@@ -23,8 +23,8 @@ namespace KiTrack{
       
    private:
       
-      float _ratioChangeMaxSquared;
-      float _ratioChangeMinSquared;
+      float _ratioChangeMaxSquared{};
+      float _ratioChangeMinSquared{};
 
       
       

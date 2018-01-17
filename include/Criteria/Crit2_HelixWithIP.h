@@ -30,8 +30,8 @@ namespace KiTrack{
     
    private:
       
-      float _ratioMax;
-      float _ratioMin;
+      float _ratioMax{};
+      float _ratioMin{};
       
       
       
