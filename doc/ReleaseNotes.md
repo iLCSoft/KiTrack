@@ -1,3 +1,9 @@
+# v01-09
+
+* 2018-01-31 Frank Gaede ([PR#1](https://github.com/iLCSoft/KiTrack/pull/1))
+  - fix all compiler warnings (gcc54-ub1604)
+       - only "member initialization" from effc++
+
 # v01-08
 
 
