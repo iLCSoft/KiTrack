@@ -23,7 +23,7 @@ namespace KiTrack{
        */
       Crit4_NoZigZag ( float prodMin , float prodMax );
       
-      virtual bool areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength );
+      virtual bool areCompatible( Segment* parent , Segment* child );
       
       virtual ~Crit4_NoZigZag(){};
       

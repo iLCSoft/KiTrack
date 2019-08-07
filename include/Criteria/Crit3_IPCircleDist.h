@@ -16,7 +16,7 @@ namespace KiTrack{
       
       Crit3_IPCircleDist ( float distToCircleMin , float distToCircleMax );
       
-      virtual bool areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength );
+      virtual bool areCompatible( Segment* parent , Segment* child );
       
       virtual ~Crit3_IPCircleDist(){};
       

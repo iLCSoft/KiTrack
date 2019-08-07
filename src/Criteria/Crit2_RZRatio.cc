@@ -22,7 +22,7 @@ Crit2_RZRatio::Crit2_RZRatio ( float ratioMin, float ratioMax ){
 }
 
   
-bool Crit2_RZRatio::areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength ){
+bool Crit2_RZRatio::areCompatible( Segment* parent , Segment* child ) {
    
    
    

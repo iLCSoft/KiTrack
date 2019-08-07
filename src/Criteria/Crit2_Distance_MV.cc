@@ -19,7 +19,7 @@ Crit2_Distance_MV::Crit2_Distance_MV ( float deltaPos2Min , float deltaPos2Max )
 
 
 
-bool Crit2_Distance_MV::areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength ){
+bool Crit2_Distance_MV::areCompatible( Segment* parent , Segment* child ) {
    
    
    

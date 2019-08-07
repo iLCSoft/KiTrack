@@ -24,7 +24,7 @@ Crit4_DistOfCircleCenters::Crit4_DistOfCircleCenters ( float distMin , float dis
 
 
 
-bool Crit4_DistOfCircleCenters::areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength ){
+bool Crit4_DistOfCircleCenters::areCompatible( Segment* parent , Segment* child ) {
     
    
    

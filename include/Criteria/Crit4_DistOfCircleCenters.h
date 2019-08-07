@@ -19,7 +19,7 @@ namespace KiTrack{
        */
       Crit4_DistOfCircleCenters ( float distMin , float distMax );
       
-      virtual bool areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength );
+      virtual bool areCompatible( Segment* parent , Segment* child );
       
       virtual ~Crit4_DistOfCircleCenters(){};
       

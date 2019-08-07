@@ -22,13 +22,13 @@ namespace KiTrack {
     KiTrackException(){  /*no_op*/ ; } 
     
   public: 
-     virtual ~KiTrackException() throw() { /*no_op*/; } 
+     virtual ~KiTrackException()  { /*no_op*/; } 
     
     KiTrackException( const std::string& text ){
       message = "KiTrack::Exception: " + text ;
     }
 
-    virtual const char* what() const  throw() { return  message.c_str() ; } 
+    virtual const char* what() const  noexcept { return  message.c_str() ; } 
 
   };
 
@@ -42,7 +42,7 @@ namespace KiTrack {
   protected:
     OutOfRange() {  /*no_op*/ ; } 
   public: 
-    virtual ~OutOfRange() throw() { /*no_op*/; } 
+    virtual ~OutOfRange()  { /*no_op*/; } 
 
     OutOfRange( std::string text ){
       message = "KiTrack::OutOfRange: " + text ;
@@ -58,7 +58,7 @@ namespace KiTrack {
   protected:
      InvalidParameter() {  /*no_op*/ ; } 
   public: 
-     virtual ~InvalidParameter() throw() { /*no_op*/; } 
+     virtual ~InvalidParameter()  { /*no_op*/; } 
      
      InvalidParameter( std::string text ){
         message = "KiTrack::InvalidParameter: " + text ;
@@ -74,7 +74,7 @@ namespace KiTrack {
   protected:
      BadSegmentLength() {  /*no_op*/ ; } 
   public: 
-     virtual ~BadSegmentLength() throw() { /*no_op*/; } 
+     virtual ~BadSegmentLength()  { /*no_op*/; } 
      
      BadSegmentLength( std::string text ){
         message = "KiTrack::BadSegmentLength: " + text ;
@@ -91,7 +91,7 @@ namespace KiTrack {
   protected:
      UnknownCriterion() {  /*no_op*/ ; } 
   public: 
-     virtual ~UnknownCriterion() throw() { /*no_op*/; } 
+     virtual ~UnknownCriterion()  { /*no_op*/; } 
      
      UnknownCriterion( std::string text ){
         message = "KiTrack::UnknownCriterion: " + text ;

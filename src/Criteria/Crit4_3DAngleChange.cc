@@ -23,7 +23,7 @@ Crit4_3DAngleChange::Crit4_3DAngleChange ( float changeMin , float changeMax ){
 
 
 
-bool Crit4_3DAngleChange::areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength ){
+bool Crit4_3DAngleChange::areCompatible( Segment* parent , Segment* child ) {
     
       
    if (( parent->getHits().size() == 3 )&&( child->getHits().size() == 3 )){ //this is a criterion for 3-segments

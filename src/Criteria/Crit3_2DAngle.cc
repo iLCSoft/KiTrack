@@ -20,7 +20,7 @@ Crit3_2DAngle::Crit3_2DAngle ( float angleMin, float angleMax ){
 
 
       
-bool Crit3_2DAngle::areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength ){
+bool Crit3_2DAngle::areCompatible( Segment* parent , Segment* child ) {
    
    
    //this is not written very beautiful, because this code gets called often and needs to be fast.

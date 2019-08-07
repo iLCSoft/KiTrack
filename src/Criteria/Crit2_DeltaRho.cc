@@ -20,7 +20,7 @@ Crit2_DeltaRho::Crit2_DeltaRho ( float deltaRhoMin , float deltaRhoMax ){
 
 
       
-bool Crit2_DeltaRho::areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength ){
+bool Crit2_DeltaRho::areCompatible( Segment* parent , Segment* child ) {
    
    
    

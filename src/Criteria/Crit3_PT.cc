@@ -23,7 +23,7 @@ Crit3_PT::Crit3_PT( float ptMin , float ptMax , float Bz ){
 
 
 
-bool Crit3_PT::areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength ){
+bool Crit3_PT::areCompatible( Segment* parent , Segment* child ) {
    
    
    

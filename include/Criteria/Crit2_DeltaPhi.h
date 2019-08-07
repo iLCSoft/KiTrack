@@ -18,7 +18,7 @@ namespace KiTrack{
       
       Crit2_DeltaPhi ( float deltaPhiMin , float deltaPhiMax );
       
-      virtual bool areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength );
+      virtual bool areCompatible( Segment* parent , Segment* child );
 
       virtual ~Crit2_DeltaPhi(){};
 

@@ -25,7 +25,7 @@ namespace KiTrack{
       /** @return If the two Segments are compatible with each other, i.e. could be combined to a longer Segment or a 
        * track.
        */
-      virtual bool areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength ) = 0;
+      virtual bool areCompatible( Segment* parent , Segment* child ) = 0;
       
       
       /** @return A map, where the calculated values are stored. The keys are the names of the values.

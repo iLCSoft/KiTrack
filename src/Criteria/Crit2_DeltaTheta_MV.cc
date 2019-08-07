@@ -20,7 +20,7 @@ Crit2_DeltaTheta_MV::Crit2_DeltaTheta_MV ( float deltaThetaMin , float deltaThet
 
 
 
-bool Crit2_DeltaTheta_MV::areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength ){
+bool Crit2_DeltaTheta_MV::areCompatible( Segment* parent , Segment* child ) {
    
    
    

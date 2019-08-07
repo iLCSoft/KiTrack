@@ -23,7 +23,7 @@ Crit3_NoZigZag_MV::Crit3_NoZigZag_MV ( float prodMin , float prodMax ){
 
 
 
-bool Crit3_NoZigZag_MV::areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength ){
+bool Crit3_NoZigZag_MV::areCompatible( Segment* parent , Segment* child ) {
    
    
    

@@ -19,7 +19,7 @@ Crit2_DeltaPhi_MV::Crit2_DeltaPhi_MV ( float deltaPhiMin , float deltaPhiMax ){
 
 
 
-bool Crit2_DeltaPhi_MV::areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength ){
+bool Crit2_DeltaPhi_MV::areCompatible( Segment* parent , Segment* child ) {
    
    
    
