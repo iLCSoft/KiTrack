@@ -24,7 +24,7 @@ Crit4_RChange::Crit4_RChange ( float changeMin , float changeMax ){
 
 
 
-bool Crit4_RChange::areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength ){
+bool Crit4_RChange::areCompatible( Segment* parent , Segment* child ) {
     
    
    

@@ -4,11 +4,12 @@
 #include <iostream>
 #include <algorithm>
 #include <sstream>
+#include <random>
 
 
 using namespace KiTrack;
 
-HopfieldNeuralNet::HopfieldNeuralNet( std::vector < std::vector <bool> > G , std::vector < double > QI , std::vector < double > states , double omega) throw( InvalidParameter ){
+HopfieldNeuralNet::HopfieldNeuralNet( std::vector < std::vector <bool> > G , std::vector < double > QI , std::vector < double > states , double omega) {
 
    unsigned int nNeurons = G.size();
 
@@ -139,7 +140,7 @@ HopfieldNeuralNet::HopfieldNeuralNet( std::vector < std::vector <bool> > G , std
    
    _isStable = false;
    _limitForStable = 0.01;
-   
+
 
 
 }
@@ -166,8 +167,11 @@ bool HopfieldNeuralNet::doIteration(){
    
    _isStable = true;
    
-   
-   random_shuffle ( _order.begin() , _order.end() ); //shuffle the order
+   // initialize the random generator
+   std::random_device rng;
+   std::mt19937 urng(rng());
+
+   shuffle ( _order.begin() , _order.end() , urng ); //shuffle the order
    
    for (unsigned int i=0; i<_States.size() ; i++){ //for all entries of the vector
       

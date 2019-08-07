@@ -23,7 +23,7 @@ Crit3_IPCircleDist::Crit3_IPCircleDist( float distToCircleMin , float distToCirc
 
 
 
-bool Crit3_IPCircleDist::areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength ){
+bool Crit3_IPCircleDist::areCompatible( Segment* parent , Segment* child ) {
    
 
    

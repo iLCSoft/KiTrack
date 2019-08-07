@@ -19,7 +19,7 @@ namespace KiTrack{
        */
       Crit4_RChange ( float changeMin , float changeMax );
       
-      virtual bool areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength );
+      virtual bool areCompatible( Segment* parent , Segment* child );
       
       virtual ~Crit4_RChange(){};
       

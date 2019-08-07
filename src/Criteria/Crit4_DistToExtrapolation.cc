@@ -25,7 +25,7 @@ Crit4_DistToExtrapolation::Crit4_DistToExtrapolation ( float distMin , float dis
 
 
 
-bool Crit4_DistToExtrapolation::areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength ){
+bool Crit4_DistToExtrapolation::areCompatible( Segment* parent , Segment* child ) {
     
    
    

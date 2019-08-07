@@ -25,7 +25,7 @@ Crit4_PhiZRatioChange::Crit4_PhiZRatioChange ( float changeMin , float changeMax
 
 
 
-bool Crit4_PhiZRatioChange::areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength ){
+bool Crit4_PhiZRatioChange::areCompatible( Segment* parent , Segment* child ) {
     
    
    

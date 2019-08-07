@@ -85,7 +85,7 @@ namespace KiTrack{
        * 
        * @return a "new" Criterion (i.e. needs to be deleted later on)
        */
-      static ICriterion* createCriterion( std::string critName , float min=0. , float max=0. )throw (UnknownCriterion) ;
+      static ICriterion* createCriterion( std::string critName , float min=0. , float max=0. ) ;
       
       /**
        * Sets values for the passed referneced floats left and right. They indicate how

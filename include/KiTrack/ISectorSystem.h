@@ -27,7 +27,7 @@ namespace KiTrack{
    public:
       
       /** @return the layer of the corresponding sector. */
-      virtual unsigned getLayer( int sector ) const throw ( OutOfRange ) =0;
+      virtual unsigned getLayer( int sector ) const  =0;
       
       /** @return the number of layers in the sector system. */
       unsigned getNumberOfLayers() const { return _nLayers; };

@@ -23,7 +23,7 @@ Crit3_3DAngleTimesR::Crit3_3DAngleTimesR ( float angleMin, float angleMax ){
 
 
       
-bool Crit3_3DAngleTimesR::areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength ){
+bool Crit3_3DAngleTimesR::areCompatible( Segment* parent , Segment* child ) {
    
    
    

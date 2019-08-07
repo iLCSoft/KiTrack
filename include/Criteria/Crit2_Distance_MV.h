@@ -18,7 +18,7 @@ namespace KiTrack{
       
       Crit2_Distance_MV ( float deltaPos2Min , float deltaPos2Max );
       
-      virtual bool areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength );
+      virtual bool areCompatible( Segment* parent , Segment* child );
 
       virtual ~Crit2_Distance_MV(){};
 

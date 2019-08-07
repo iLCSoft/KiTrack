@@ -34,7 +34,7 @@ namespace KiTrack{
          * between 0 and 1. 0 means, no influence from the quality of the neurons -> system tends to biggest compatible 
          * set. 1 means highest influence from the quality of the neurons -> the highest quality neurons tend to win.
          */
-         HopfieldNeuralNet( std::vector < std::vector <bool> > G , std::vector < double > QI , std::vector < double > states , double omega) throw( InvalidParameter );
+         HopfieldNeuralNet( std::vector < std::vector <bool> > G , std::vector < double > QI , std::vector < double > states , double omega) ;
                
                
          /** Does one iteration of the neuronal network.

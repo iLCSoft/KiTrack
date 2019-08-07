@@ -21,7 +21,7 @@ Crit3_ChangeRZRatio::Crit3_ChangeRZRatio( float minChange , float maxChange ){
 
 
 
-bool Crit3_ChangeRZRatio::areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength ){
+bool Crit3_ChangeRZRatio::areCompatible( Segment* parent , Segment* child ) {
    
    
    

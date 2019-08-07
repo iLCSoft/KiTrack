@@ -20,7 +20,7 @@ Crit2_StraightTrackRatio::Crit2_StraightTrackRatio ( float ratioMin, float ratio
 
 
       
-bool Crit2_StraightTrackRatio::areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength ){
+bool Crit2_StraightTrackRatio::areCompatible( Segment* parent , Segment* child ) {
    
    
    

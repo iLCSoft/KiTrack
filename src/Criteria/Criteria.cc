@@ -99,7 +99,7 @@ std::set< std::string > Criteria::getCriteriaNames( std::string type ){
 }
 
 
-ICriterion* Criteria::createCriterion( std::string critName, float min , float max ) throw (UnknownCriterion){
+ICriterion* Criteria::createCriterion( std::string critName, float min , float max ) {
    
    
    

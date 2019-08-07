@@ -16,7 +16,7 @@ namespace KiTrack{
       
       Crit3_PT ( float ptMin , float ptMax , float Bz = 3.5 );
       
-      virtual bool areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength );
+      virtual bool areCompatible( Segment* parent , Segment* child );
       
       virtual ~Crit3_PT(){};
       

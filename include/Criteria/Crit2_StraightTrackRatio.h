@@ -21,7 +21,7 @@ namespace KiTrack{
       
       Crit2_StraightTrackRatio ( float ratioMin, float ratioMax );
       
-      virtual bool areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength );
+      virtual bool areCompatible( Segment* parent , Segment* child );
 
       virtual ~Crit2_StraightTrackRatio(){};
 

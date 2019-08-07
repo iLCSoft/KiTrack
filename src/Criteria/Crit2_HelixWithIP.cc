@@ -22,7 +22,7 @@ Crit2_HelixWithIP::Crit2_HelixWithIP ( float ratioMin , float ratioMax ){
 
 
       
-bool Crit2_HelixWithIP::areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength ){
+bool Crit2_HelixWithIP::areCompatible( Segment* parent , Segment* child ) {
    
    
    

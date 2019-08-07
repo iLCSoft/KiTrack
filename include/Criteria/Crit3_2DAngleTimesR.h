@@ -19,7 +19,7 @@ namespace KiTrack{
        */
       Crit3_2DAngleTimesR ( float angleMin, float angleMax );
       
-      virtual bool areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength );
+      virtual bool areCompatible( Segment* parent , Segment* child );
 
       virtual ~Crit3_2DAngleTimesR(){};
     

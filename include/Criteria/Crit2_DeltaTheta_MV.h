@@ -18,7 +18,7 @@ namespace KiTrack{
       
       Crit2_DeltaTheta_MV ( float deltaThetaMin , float deltaThetaMax );
       
-      virtual bool areCompatible( Segment* parent , Segment* child )throw( BadSegmentLength );
+      virtual bool areCompatible( Segment* parent , Segment* child );
 
       virtual ~Crit2_DeltaTheta_MV(){};
 
