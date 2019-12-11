@@ -1,3 +1,10 @@
+# v01-10
+
+* 2019-08-09 Frank Gaede ([PR#2](https://github.com/iLCSoft/KiTrack/pull/2))
+  - make compatible w/ c++17
+        - remove all throw() declarations
+        - replace std::random_shuffle w/ std::shuffle<..., std::mt19937>
+
 # v01-09
 
 * 2018-01-31 Frank Gaede ([PR#1](https://github.com/iLCSoft/KiTrack/pull/1))
