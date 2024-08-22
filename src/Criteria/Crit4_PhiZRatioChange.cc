@@ -90,7 +90,7 @@ bool Crit4_PhiZRatioChange::areCompatible( Segment* parent , Segment* child ) {
          if ( ratioOfPhiZRatio < _changeMin ) return false;
          
       }
-      catch ( InvalidParameter ){
+      catch ( const InvalidParameter& ){
        
          if (_saveValues) _map_name_value["Crit4_PhiZRatioChange"] = 1.;
          

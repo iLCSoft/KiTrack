@@ -102,7 +102,7 @@ bool Crit3_2DAngleTimesR::areCompatible( Segment* parent , Segment* child ) {
             if ( angleTimesR > _angleMax ) return false;
             
          }
-         catch( InvalidParameter ){
+         catch( const InvalidParameter& ){
             
             
          }
