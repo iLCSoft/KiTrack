@@ -25,7 +25,7 @@ INCLUDE( ilcsoft_default_settings )
 
 FIND_PACKAGE( Marlin 1.0 REQUIRED ) # minimum required Marlin version
 INCLUDE_DIRECTORIES( ${Marlin_INCLUDE_DIRS} )
-LINK_LIBRARIES( ${Marlin_LIBRARIES} )
+LINK_LIBRARIES( streamlog )
 ADD_DEFINITIONS( ${Marlin_DEFINITIONS} )
 
 
