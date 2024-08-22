@@ -84,7 +84,7 @@ bool Crit2_HelixWithIP::areCompatible( Segment* parent , Segment* child ) {
 
          
       }
-      catch ( InvalidParameter ){
+      catch ( const InvalidParameter& ){
          
         
       }

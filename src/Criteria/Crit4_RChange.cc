@@ -68,7 +68,7 @@ bool Crit4_RChange::areCompatible( Segment* parent , Segment* child ) {
          if ( ratioOfR < _changeMin ) return false;
          
       }
-      catch ( InvalidParameter ){
+      catch ( const InvalidParameter& ){
          
          if (_saveValues) _map_name_value["Crit4_RChange"] = 1.;
          

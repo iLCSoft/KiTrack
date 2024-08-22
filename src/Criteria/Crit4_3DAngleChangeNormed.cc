@@ -90,7 +90,7 @@ bool Crit4_3DAngleChangeNormed::areCompatible( Segment* parent , Segment* child 
          if ( ratioNormed < _changeMin ) return false;
          
       }
-      catch ( InvalidParameter ){
+      catch ( const InvalidParameter& ){
          
          if (_saveValues) _map_name_value["Crit4_3DAngleChangeNormed"] = 0.;
          

@@ -70,7 +70,7 @@ bool Crit3_PT::areCompatible( Segment* parent , Segment* child ) {
 
          
       }
-      catch ( InvalidParameter ){
+      catch ( const InvalidParameter& ){
          
          if (_saveValues) _map_name_value["Crit3_PT"] =  0.;
          

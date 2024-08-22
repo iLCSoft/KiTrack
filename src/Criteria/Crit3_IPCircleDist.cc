@@ -61,7 +61,7 @@ bool Crit3_IPCircleDist::areCompatible( Segment* parent , Segment* child ) {
          if ( circleDistToIP  < _distToCircleMin ) return false;
 
       }
-      catch ( InvalidParameter ){
+      catch ( const InvalidParameter& ){
          
          
          if (_saveValues) _map_name_value["Crit3_IPCircleDist"] =  0.;

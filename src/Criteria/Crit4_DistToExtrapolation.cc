@@ -90,7 +90,7 @@ bool Crit4_DistToExtrapolation::areCompatible( Segment* parent , Segment* child 
          if ( distNormed < _distMin ) return false;
          
       }
-      catch ( InvalidParameter ){
+      catch ( const InvalidParameter& ){
          
          if (_saveValues) _map_name_value["Crit4_DistToExtrapolation"] = -1.;
       
