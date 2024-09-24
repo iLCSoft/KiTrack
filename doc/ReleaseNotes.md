@@ -1,3 +1,9 @@
+# v01-10-01
+
+* 2024-08-22 tmadlener ([PR#4](https://github.com/iLCSoft/KiTrack/pull/4))
+  - Move CI to github actions and remove travis-ci config
+  - Fix c++ warnings and enable `-Werror` for CI
+
 # v01-10
 
 * 2019-08-09 Frank Gaede ([PR#2](https://github.com/iLCSoft/KiTrack/pull/2))
