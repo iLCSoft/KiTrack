@@ -1,3 +1,11 @@
+# v01-11
+
+* 2026-11-11 Juan Miguel Carceller ([PR#6](https://github.com/iLCSoft/KiTrack/pull/6))
+  - Require CMake 3.10 to fix `Compatibility with CMake < 3.5 has been removed from CMake.` Also stop requesting the removed `export_library_dependencies()` command. Remove the corresponding obsolete LibDeps include from the installed package config.
+
+* 2026-09-10 Thomas Madlener ([PR#5](https://github.com/iLCSoft/KiTrack/pull/5))
+  - Switch to the latest version of the key4hep-build workflow
+
 # v01-10-01
 
 * 2024-08-22 tmadlener ([PR#4](https://github.com/iLCSoft/KiTrack/pull/4))
